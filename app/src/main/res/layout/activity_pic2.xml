@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Levelfirst.Number2">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="三角面多边形"
+        android:textColor="@color/colorblack"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="@+id/imageView7"
+        app:layout_constraintStart_toStartOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="@+id/imageView7"
+        android:autoSizeMaxTextSize="80dp"
+        android:autoSizeMinTextSize="2dp"
+        android:autoSizeTextType="uniform"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:background="@drawable/radious"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+       android:text="\t由若干相同大小的等边三角形边与边相连组成的图形叫做三角面多边形。不同等边三角形个数组成的图形有不同的名称。\n\t下列图形都是由6个等边三角形边与边相连得到的6三角面多边形。"
+        android:textColor="@color/colorblack"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="@+id/imageView7"
+        app:layout_constraintStart_toStartOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="@+id/imageView7"
+        app:autoSizeMaxTextSize="80dp"
+        app:autoSizeMinTextSize="2dp"
+        app:autoSizeTextType="uniform"/>
+
+
+    <ImageView
+        android:adjustViewBounds="true"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:scaleType="fitCenter"
+        android:src="@drawable/book1_section5_page2_img"
+        />
+
+</LinearLayout>

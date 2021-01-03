@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout
+    android:id="@+id/snakebar_rootview"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+
+        android:id="@+id/f1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:padding="8dp"
+            android:id="@+id/pic1"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:src="@drawable/book1_section1_page1_img1"
+            android:scaleType="fitCenter"
+            android:background="@drawable/radious"
+            />
+
+        <ImageView
+            android:id="@+id/a1"
+            android:layout_below="@id/pic1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@id/pic1"
+            android:layout_marginTop="-35dp"
+            android:layout_marginLeft="-35dp"
+            android:scaleType="fitCenter"
+            android:background="@drawable/radious"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:padding="8dp"
+            android:id="@+id/pic2"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:src="@drawable/book1_section1_page1_img2"
+            android:scaleType="fitCenter"
+            android:background="@drawable/radious"
+            />
+        <ImageView
+            android:id="@+id/a2"
+            android:scaleType="fitCenter"
+            android:background="@drawable/radious"
+            android:layout_below="@id/pic2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@id/pic2"
+            android:layout_marginTop="-35dp"
+            android:layout_marginLeft="-35dp"
+            />
+    </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@id/f1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <RelativeLayout
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:id="@+id/r1"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:padding="8dp"
+            android:id="@+id/pic3"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:src="@drawable/book1_section1_page1_img3"
+            android:scaleType="fitCenter"
+            android:background="@drawable/radious"
+            />
+        <ImageView
+            android:scaleType="fitCenter"
+            android:background="@drawable/radious"
+            android:id="@+id/a3"
+            android:layout_below="@id/pic3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@id/pic3"
+            android:layout_marginTop="-35dp"
+            android:layout_marginLeft="-35dp"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/pic4"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:src="@drawable/book1_section1_page1_img4"
+            android:scaleType="fitCenter"
+            android:background="@drawable/radious"
+            />
+        <ImageView
+            android:id="@+id/a4"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="-35dp"
+            android:layout_marginLeft="-35dp"
+            android:scaleType="fitCenter"
+            android:layout_toRightOf="@id/pic4"
+           android:layout_below="@id/pic4"
+            android:background="@drawable/radious"
+            />
+    </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+
+    </RelativeLayout>
+

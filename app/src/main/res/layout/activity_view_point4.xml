@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Levelfirst.Shape3">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        app:autoSizeMaxTextSize="80dp"
+        app:autoSizeMinTextSize="2dp"
+        app:autoSizeTextType="uniform"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="使用MAGSPACE做一个圆柱，从不同角度观察并画出来"
+        android:textColor="@color/colorblack"/>
+
+    <ImageView
+        android:padding="10dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:src="@drawable/book1_section7_page4_img"
+        android:layout_marginBottom="8dp"
+        />
+    <LinearLayout
+        android:layout_weight="0.5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"></LinearLayout>
+
+
+</LinearLayout>

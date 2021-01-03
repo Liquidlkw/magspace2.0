@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@drawable/circle_dialog"
+    >
+
+
+
+    <TextView
+        android:gravity="center"
+        android:textColor="@color/colorblack"
+        android:text="45°"
+        android:id="@+id/angle45"
+        android:padding="8dp"
+        android:src="@drawable/book1_section7_page6_cell1"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="80dp" />
+    <TextView
+        android:gravity="center"
+        android:textColor="@color/colorblack"
+        android:text="60°"
+        android:id="@+id/angle60"
+        android:padding="8dp"
+        android:src="@drawable/book1_section7_page6_cell1"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="80dp" />
+
+    <TextView
+        android:gravity="center"
+        android:textColor="@color/colorblack"
+        android:text="90°"
+        android:id="@+id/angle90"
+        android:padding="8dp"
+        android:src="@drawable/book1_section7_page6_cell1"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="80dp" />
+
+    <TextView
+        android:gravity="center"
+        android:textColor="@color/colorblack"
+        android:text="120°"
+        android:id="@+id/angle120"
+        android:padding="8dp"
+        android:src="@drawable/book1_section7_page6_cell1"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="80dp" />
+
+
+
+
+</LinearLayout>

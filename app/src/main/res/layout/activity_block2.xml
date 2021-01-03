@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Levelfirst.Number2">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:maxLines="1"
+        android:layout_height="wrap_content"
+        android:text="索马立方体的起源"
+        android:textColor="@color/colorblack"
+        android:textStyle="bold"
+        app:autoSizeMaxTextSize="80dp"
+        app:autoSizeMinTextSize="2dp"
+        app:autoSizeTextType="uniform"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:gravity="center_vertical"
+        android:background="@drawable/radious"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:text="\t索马立方体由丹麦作家皮亚特.海恩发明。\n\t1936年，皮亚特.海恩在听量子物理讲座讲述如何将空间拆分成立方体的时候，他产生了这个疑惑的想法。\n\t将少于4个，大小相同的正立方体，构成的所有不规则图形中，是否可以组建一个较大的正方体？\n\t最终他构建了7个基本方块，通过使用这些方块可以组装成了一个正方体，并且能够创造出不同的图形。"
+        android:textColor="@color/colorblack"
+        app:autoSizeMaxTextSize="80dp"
+        app:autoSizeMinTextSize="2dp"
+        app:autoSizeTextType="uniform"/>
+
+
+    <ImageView
+        android:padding="10dp"
+        android:adjustViewBounds="true"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:src="@drawable/book3_section4_page2_img"
+        />
+
+</LinearLayout>

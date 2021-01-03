@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Levelfirst.Shape3">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatTextView
+                app:autoSizeMaxTextSize="80dp"
+                app:autoSizeMinTextSize="2dp"
+                app:autoSizeTextType="uniform"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textSize="15dp"
+                android:text="1.摆放5个黄色正方形，如下图所示"
+                android:textColor="@color/colorblack"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                app:autoSizeMaxTextSize="80dp"
+                app:autoSizeMinTextSize="2dp"
+                app:autoSizeTextType="uniform"
+
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="  2.如下图所示，连接一块红色正方形"
+                android:textColor="@color/colorblack"
+                android:textSize="15dp"/>
+
+        </LinearLayout>
+
+
+        <ImageView
+
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_height="match_parent"
+            android:src="@drawable/book2_section4_page3_img1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatTextView
+                app:autoSizeMaxTextSize="80dp"
+                app:autoSizeMinTextSize="2dp"
+                app:autoSizeTextType="uniform"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textSize="15dp"
+                android:text="3.将正方形叠起来，做成一个立方体"
+                android:textColor="@color/colorblack"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                app:autoSizeMaxTextSize="80dp"
+                app:autoSizeMinTextSize="2dp"
+                app:autoSizeTextType="uniform"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="  4.变换红色正方形位置做成不同的方块容积。"
+                android:textColor="@color/colorblack"
+                android:textSize="15dp"/>
+
+        </LinearLayout>
+
+        <ImageView
+
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/book2_section4_page3_img2"
+
+            />
+        <ImageView
+
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/book2_section4_page3_img3"
+
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

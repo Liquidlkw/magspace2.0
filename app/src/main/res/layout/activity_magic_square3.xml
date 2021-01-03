@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Levelfirst.Shape3">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatTextView
+                app:autoSizeMaxTextSize="80dp"
+                app:autoSizeMinTextSize="2dp"
+                app:autoSizeTextType="uniform"
+                android:layout_weight="1"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="1.使用MAGSPACE卡片，完成如下所示图形"
+                android:textColor="@color/colorblack"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                app:autoSizeMaxTextSize="80dp"
+                app:autoSizeMinTextSize="2dp"
+                app:autoSizeTextType="uniform"
+
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  2.找一找行和列交叉时，该数字计算两次"
+                android:textColor="@color/colorblack"
+                android:textSize="15dp"/>
+
+        </LinearLayout>
+
+
+        <ImageView
+
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_height="match_parent"
+            android:src="@drawable/book2_section2_page3_img1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatTextView
+                app:autoSizeMaxTextSize="80dp"
+                app:autoSizeMinTextSize="2dp"
+                app:autoSizeTextType="uniform"
+                android:maxLines="1"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="3.使行和列的值相同"
+                android:textColor="@color/colorblack"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                app:autoSizeMaxTextSize="80dp"
+                app:autoSizeMinTextSize="2dp"
+                app:autoSizeTextType="uniform"
+                android:maxLines="1"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  5.检查是否和列的值相同"
+                android:textColor="@color/colorblack"
+                android:textSize="15dp"/>
+
+        </LinearLayout>
+
+        <ImageView
+
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_height="match_parent"
+            android:src="@drawable/book2_section2_page3_img2"
+
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

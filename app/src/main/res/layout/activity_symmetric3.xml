@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Levelfirst.Shape3">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:autoSizeMaxTextSize="80dp"
+            android:autoSizeMinTextSize="2dp"
+            android:autoSizeTextType="uniform"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="1.使用2个等边三角形，1个正方形和2个扇形。"
+            android:textColor="@color/colorblack"/>
+
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_height="match_parent"
+            android:src="@drawable/book3_section1_page3_img1"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatTextView
+
+                app:autoSizeMaxTextSize="80dp"
+                app:autoSizeMinTextSize="2dp"
+                app:autoSizeTextType="uniform"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="2.做一个有对称线的图形。"
+                android:textColor="@color/colorblack"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                app:autoSizeMaxTextSize="80dp"
+                app:autoSizeMinTextSize="2dp"
+                app:autoSizeTextType="uniform"
+                android:maxLines="1"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  3.做一个有旋转对称的图形。"
+                android:textColor="@color/colorblack"
+                android:textSize="15dp"/>
+
+        </LinearLayout>
+
+
+        <ImageView
+
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_height="match_parent"
+            android:src="@drawable/book3_section1_page3_img2"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatTextView
+                app:autoSizeMaxTextSize="80dp"
+                app:autoSizeMinTextSize="2dp"
+                app:autoSizeTextType="uniform"
+                android:maxLines="1"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="4.用2个超级扇形，2个扇形和2个直角三角形做有对称线和旋转对称的图形。"
+                android:textColor="@color/colorblack"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_height="match_parent"
+            android:src="@drawable/book3_section1_page3_img3"
+
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LevelThird.Chess6">
+
+    <LinearLayout
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+       >
+        <LinearLayout
+            android:padding="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:src="@drawable/book3_section3_page6_img1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4"/>
+            <TextView
+                android:padding="4dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/radious"
+
+                app:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:textColor="@color/colorblack"
+                android:text="90°+120°+150°=360°"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               />
+        </LinearLayout>
+        <LinearLayout
+            android:padding="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:src="@drawable/book3_section3_page6_img2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4"/>
+            <TextView
+
+                android:padding="4dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/radious"
+
+                app:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:textColor="@color/colorblack"
+                android:text="60°+150°+150°=360°"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+        <LinearLayout
+            android:padding="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:src="@drawable/book3_section3_page6_img3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4"/>
+            <TextView
+                android:padding="4dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/radious"
+
+                app:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:textColor="@color/colorblack"
+                android:text="90°+135°+135°=360°"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                 />
+        </LinearLayout>
+        <LinearLayout
+            android:padding="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:src="@drawable/book3_section3_page6_img4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4"/>
+            <TextView
+                android:padding="4dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/radious"
+                app:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:textColor="@color/colorblack"
+                android:text="60°+120°+60°+120°=360°"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+        <LinearLayout
+            android:padding="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:src="@drawable/book3_section3_page6_img5"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4"/>
+            <TextView
+
+                android:padding="4dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/radious"
+                app:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:textColor="@color/colorblack"
+                android:text="60°+90°+120°+90°=360°"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:padding="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:src="@drawable/book3_section3_page6_img6"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4"/>
+            <TextView
+                android:padding="4dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/radious"
+                app:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:textColor="@color/colorblack"
+                android:text="60°+60°+60°+60°+120°=360°"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+              />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+        <LinearLayout
+            android:padding="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:src="@drawable/book3_section3_page6_img7"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4"/>
+            <TextView
+                android:padding="4dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/radious"
+                app:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:textColor="@color/colorblack"
+                android:text="60°+60°+90°+60°+90°=360°"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+              />
+        </LinearLayout>
+        <LinearLayout
+            android:padding="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:src="@drawable/book3_section3_page6_img8"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4"/>
+            <TextView
+                android:padding="4dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/radious"
+                app:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:textColor="@color/colorblack"
+                android:text="60°+60°+60°+90°+90°=360°"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+            />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</LinearLayout>

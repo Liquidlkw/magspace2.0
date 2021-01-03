@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Levelfirst.Shape5">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:background="@drawable/radious"
+        app:autoSizeMaxTextSize="80dp"
+        app:autoSizeMinTextSize="2dp"
+        app:autoSizeTextType="uniform"
+        android:textColor="@color/colorblack"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="1.某人挑选两个物体给另外一个人。\n2.接受物体的人用手对物体进行重量估计，猜测那个物体更重。\n3.利用天平对两个物体进行重量比较。\n4.更换次数，最终猜测准确次数多的人获胜。"
+        />
+
+    <ImageView
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:adjustViewBounds="true"
+        android:src="@drawable/book1_section3_page5_img" />
+
+</LinearLayout>

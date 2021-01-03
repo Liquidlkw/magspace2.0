@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Levelfirst.Shape5"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:scaleType="fitXY"
+        android:layout_height="50dp"
+        android:src="@drawable/book1_section2_page5_img1"
+        />
+
+    <TextView
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:background="@drawable/radious"
+        android:paddingBottom="20dp"
+        app:autoSizeMaxTextSize="80dp"
+        app:autoSizeMinTextSize="2dp"
+        app:autoSizeTextType="uniform"
+        android:textColor="@color/colorblack"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="1.利用2个上图中的第一个图形放置在一起形成一个游戏板，将上图后面三个图形放在板的一边。\n2.决定谁先走第一步，没人轮流放置一片图形在游戏版上。\n
+3.第一个放的人需要将第二个图形放在游戏板的末端。下一人需将图形片紧挨着前一个人放置的图形的边但不能与其重叠
+。\n4.先完成游戏板得人获胜。"/>
+
+    <ImageView
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:adjustViewBounds="true"
+        android:src="@drawable/book1_section2_page5_img2" />
+
+</LinearLayout>

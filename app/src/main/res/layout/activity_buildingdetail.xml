@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".model.BuildingdetailActivity">
+<FrameLayout
+    android:id="@+id/bg"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:background="@drawable/changjing_36pcs"
+   >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/center_image"
+            android:layout_marginTop="32dp"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="@drawable/stage1"
+            />
+        <ImageView
+            android:id="@+id/back"
+            android:clickable="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/image_back"/>
+        <TextView
+            android:id="@+id/title"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="title"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorwhite"
+            android:layout_marginTop="12dp"
+            />
+    </RelativeLayout>
+</FrameLayout>
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+            <ImageView
+                android:id="@+id/bottom_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                />
+    </ScrollView>
+
+
+</LinearLayout>

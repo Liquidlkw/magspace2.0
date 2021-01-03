@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Levelfirst.Number2">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/radious"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="1.做一个顶部由6个MAGSPACE三角形的六角柱。\n2.用一个透明的六边形做一个转盘，并贴上箭头贴纸。\n3.预计箭头指向并不断的旋转再观察。"
+        android:textColor="@color/colorblack"
+        app:autoSizeMaxTextSize="80dp"
+        app:autoSizeMinTextSize="2dp"
+        app:autoSizeTextType="uniform"/>
+
+
+    <ImageView
+        android:padding="10dp"
+        android:adjustViewBounds="true"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:src="@drawable/book1_section1_page5_img1"
+        />
+
+</LinearLayout>

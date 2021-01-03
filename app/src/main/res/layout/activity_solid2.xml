@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Levelfirst.Number2">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:maxLines="1"
+        android:layout_height="wrap_content"
+        android:text="阿基米德之墓"
+        android:textColor="@color/colorblack"
+        android:textStyle="bold"
+        app:autoSizeMaxTextSize="80dp"
+        app:autoSizeMinTextSize="2dp"
+        app:autoSizeTextType="uniform"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:gravity="center_vertical"
+        android:background="@drawable/radious"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:text="\t阿基米德是希腊数学家、科学家和发明家。\n\t公元前218-201年，罗马与迦太基之间发生了一场战争，井最终以罗马军队胜出而告终，阿基米德死于这场战争。\n\t城池被攻陷时，阿基米德正在地板上画他的几何图形，罗马士兵闯进房间并踩踏其正在画的数学图形，阿基米德冲士兵喊
+道：不要动我画的圆，被激怒的士兵便用他的剑将阿基米德杀害。玛尔凯路斯将军对阿基米德之死十分震怒，因为他认为阿基米德是一个极有价值的科学家，并且在此之前已经下达过命令不准伤害阿基米德。\n\t为此，人们在阿基米德的墓前立起了一个相同半径的圆锥体。"
+        android:textColor="@color/colorblack"
+        app:autoSizeMaxTextSize="80dp"
+        app:autoSizeMinTextSize="2dp"
+        app:autoSizeTextType="uniform"/>
+
+
+    <ImageView
+        android:padding="10dp"
+        android:adjustViewBounds="true"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:src="@drawable/book3_section6_page2_img"
+        />
+
+</LinearLayout>

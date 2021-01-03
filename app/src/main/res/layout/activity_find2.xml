@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Levelfirst.Number2">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:maxLines="1"
+        android:layout_height="wrap_content"
+        android:text="模式"
+        android:textColor="@color/colorblack"
+        android:textStyle="bold"
+        app:autoSizeMaxTextSize="80dp"
+        app:autoSizeMinTextSize="2dp"
+        app:autoSizeTextType="uniform"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:gravity="center_vertical"
+        android:background="@drawable/radious"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:text="\t通过一种规则，重复安排物体，就构成了一种模式。在模式中，重复的部分被成为集合。\n\t四季的模式是春天、夏天、秋天、冬天。\n\t日历的模式是周日、周一、周二、周三、周五、周六，然后重复。"
+        android:textColor="@color/colorblack"
+        app:autoSizeMaxTextSize="80dp"
+        app:autoSizeMinTextSize="2dp"
+        app:autoSizeTextType="uniform"/>
+
+
+    <ImageView
+        android:padding="10dp"
+        android:adjustViewBounds="true"
+        android:layout_width="match_parent"
+        android:layout_weight="3"
+        android:layout_height="0dp"
+        android:src="@drawable/book1_section8_page2_img"
+        />
+
+</LinearLayout>

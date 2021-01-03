@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LevelThird.Regular6">
+
+    <TextView
+        android:layout_marginBottom="10dp"
+        android:text="1.找出所有能够由等边三角形组成的正多面体"
+        android:textSize="18dp"
+        android:textColor="@color/colorblack"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <GridLayout
+        android:rowCount="2"
+        android:columnCount="3"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <TextView
+            android:id="@+id/text_view_1"
+            android:layout_gravity="fill"
+            android:gravity="center"
+            android:textColor="@color/colorblack"
+            android:text="A.正四面体"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            />
+        <TextView
+            android:id="@+id/text_view_2"
+            android:layout_gravity="fill"
+            android:gravity="center"
+            android:textColor="@color/colorblack"
+            android:text="B.立方体"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            />
+        <TextView
+            android:id="@+id/text_view_3"
+            android:layout_gravity="fill"
+            android:gravity="center"
+            android:textColor="@color/colorblack"
+            android:text="C.正八面体"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            />
+        <TextView
+            android:id="@+id/text_view_4"
+            android:layout_gravity="fill"
+            android:gravity="center"
+            android:textColor="@color/colorblack"
+            android:text="D.正十二面体"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            />
+        <TextView
+            android:id="@+id/text_view_5"
+            android:layout_gravity="fill"
+            android:gravity="center"
+            android:textColor="@color/colorblack"
+            android:text="E.真二十面体"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            />
+
+
+
+
+    </GridLayout>
+    <TextView
+        android:layout_marginBottom="10dp"
+        android:text="2.找出下列图形折叠后构成的正多面体的面数、顶点数和边数"
+        android:textSize="18dp"
+        android:textColor="@color/colorblack"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <ImageView
+            android:padding="8dp"
+            android:background="@drawable/radious"
+            android:src="@drawable/book3_section7_page6_img"
+            android:layout_weight="3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <LinearLayout
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:gravity="center"
+                    android:textSize="15dp"
+                    android:textColor="@color/colorblack"
+                    android:text="面数"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:id="@+id/e1"
+                    android:gravity="center"
+                    android:background="@drawable/radious"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:gravity="center"
+                    android:textSize="15dp"
+                    android:textColor="@color/colorblack"
+                    android:text="顶点数"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:id="@+id/e2"
+                    android:gravity="center"
+                    android:background="@drawable/radious"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:gravity="center"
+                    android:textSize="15dp"
+                    android:textColor="@color/colorblack"
+                    android:text="边数"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:id="@+id/e3"
+                    android:gravity="center"
+                    android:background="@drawable/radious"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"></LinearLayout>
+
+</LinearLayout>

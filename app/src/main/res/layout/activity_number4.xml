@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    tools:context=".Levelfirst.Number4">
+    <TextView
+        android:layout_marginBottom="10dp"
+        android:textSize="15dp"
+        android:textColor="@color/colorblack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="按照数的顺序将数字火车连接起来，请在框中输入正确的数字。"/>
+<LinearLayout
+    android:layout_marginBottom="10dp"
+    android:orientation="vertical"
+    android:layout_weight="1"
+    android:layout_width="match_parent"
+    android:layout_height="0dp">
+
+
+    <LinearLayout
+        android:id="@+id/page_number4cell1"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
+
+    <TextView
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/colorblack"
+        android:textSize="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="下列数字火车遵循一定的规则，填入正确的数字并利用MAGSPACE制作对应的数字火车。" />
+
+    <LinearLayout
+        android:id="@+id/page_number4cell2"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

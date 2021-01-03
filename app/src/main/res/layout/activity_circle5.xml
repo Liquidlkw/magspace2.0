@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Levelfirst.Number2">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:gravity="center_vertical"
+        android:background="@drawable/radious"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:text="1.使用三种不同直径的轮子做一个汽车。\n2.画出起始线和终止线，把汽车放在起始线上。\n3.当你移动小汽车到终止线时，数出每个轮子的转数。\n4.比较每个轮子的转数，讨论直径和转数的关系。"
+        android:textColor="@color/colorblack"
+        app:autoSizeMaxTextSize="80dp"
+        app:autoSizeMinTextSize="2dp"
+        app:autoSizeTextType="uniform"/>
+
+
+    <ImageView
+
+        android:padding="10dp"
+        android:adjustViewBounds="true"
+        android:layout_width="match_parent"
+        android:layout_weight="2"
+        android:layout_height="0dp"
+        android:src="@drawable/book3_section5_page5_img"
+        />
+
+</LinearLayout>

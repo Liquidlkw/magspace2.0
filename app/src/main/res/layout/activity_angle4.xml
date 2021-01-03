@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LevelThird.Angle4">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        app:autoSizeMaxTextSize="80dp"
+        app:autoSizeMinTextSize="2dp"
+        android:maxLines="1"
+        app:autoSizeTextType="uniform"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="用MAGSPACE测量每个图形的内角并讨论测量方法"
+        android:textColor="@color/colorblack"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/m1"
+            android:layout_margin="20dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/book3_section2_page4_img1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+            <TextView
+                android:textColor="@color/colorblack"
+                android:gravity="center"
+                android:id="@+id/t1"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/radious"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/m2"
+            android:layout_margin="20dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/book3_section2_page4_img2"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+            <TextView
+                android:textColor="@color/colorblack"
+                android:gravity="center"
+                android:id="@+id/t2"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/radious"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/m3"
+            android:layout_margin="20dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/book3_section2_page4_img3"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+            <TextView
+                android:textColor="@color/colorblack"
+                android:gravity="center"
+                android:id="@+id/t3"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/radious"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/m4"
+            android:layout_margin="20dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/book3_section2_page4_img4"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+            <TextView
+                android:textColor="@color/colorblack"
+                android:gravity="center"
+                android:id="@+id/t4"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/radious"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@drawable/bg_new" android:orientation="vertical">
+    <RelativeLayout
+            android:id="@+id/bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FDC581"
+    >
+        <Button
+
+                android:id="@+id/back1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/show_back"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+        >
+        </Button>
+        <TextView
+                android:id="@+id/title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_centerInParent="true"
+                android:text="迷宫编程"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:textStyle="bold"
+        />
+    </RelativeLayout>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="418dp"
+            android:id="@+id/route_sv"
+            android:layout_weight="4"
+            android:background="#FDC581">
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:id="@+id/route_tv"
+        />
+    </ScrollView>
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#EF844E"
+            android:layout_weight="0.5"
+
+
+    >
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="30dp"
+                  android:text="点击下面按钮进行编程吧！拐角为45度哦！"
+                  android:layout_centerInParent="true"
+        >
+
+        </TextView>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="240dp"
+            android:orientation="horizontal"
+            android:background="#C5E1A5"
+
+    >
+        <Button
+                android:id="@+id/center_center"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:background="@drawable/blue_maze_selector"
+                android:text="直行0.2米"
+                android:layout_centerInParent="true"/>
+        <Button
+                android:id="@+id/top_left"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:background="@drawable/blue_maze_selector"
+                android:layout_toLeftOf="@id/top_center"
+                android:text="左前方0.1米"
+        />
+        <Button
+                android:id="@+id/top_right"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:background="@drawable/blue_maze_selector"
+                android:layout_toRightOf="@id/top_center"
+                android:text="右前方0.1米"
+        />
+        <Button
+                android:id="@+id/bottom_left"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:background="@drawable/blue_maze_selector"
+                android:layout_toLeftOf="@id/bottom_center"
+                android:layout_below="@+id/center_center"
+                android:text="左下方0.1米"
+        />
+        <Button
+                android:id="@+id/bottom_right"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:background="@drawable/blue_maze_selector"
+                android:layout_toRightOf="@id/center_center"
+                android:layout_below="@+id/center_center"
+                android:text="右后方0.1米"
+        />
+        <Button
+                android:id="@+id/center_left"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:background="@drawable/blue_maze_selector"
+                android:layout_toLeftOf="@id/top_center"
+                android:layout_centerVertical="true"
+                android:text="左0.1米"
+
+        />
+
+        <Button
+                android:id="@+id/center_right"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:background="@drawable/blue_maze_selector"
+                android:layout_toRightOf="@id/center_center"
+                android:layout_centerVertical="true"
+                android:text="右0.1米"
+
+        />
+        <Button
+                android:id="@+id/bottom_center"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:background="@drawable/blue_maze_selector"
+                android:layout_below="@id/center_center"
+                android:layout_centerHorizontal="true"
+                android:text="后退0.1米"
+        />
+        <Button
+                android:id="@+id/top_center"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:background="@drawable/blue_maze_selector"
+
+                android:layout_centerHorizontal="true"
+                android:text="直行0.1米"
+        />
+
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#C5E1A5"
+            android:layout_weight="1"
+    >
+        <Button
+                android:id="@+id/center_maze"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:background="#C5E1A5"
+                android:layout_centerInParent="true"
+        />
+        <Button
+                android:id="@+id/start_maze"
+                android:layout_width="150dp"
+                android:layout_height="80dp"
+                android:layout_toLeftOf="@id/center_maze"
+                android:background="@drawable/start_maze_selector"
+                android:text="开始运行"
+        />
+        <Button
+                android:id="@+id/clean_maze"
+                android:layout_width="150dp"
+                android:layout_height="80dp"
+                android:layout_toRightOf="@id/center_maze"
+                android:background="@drawable/clean_maze_selector"
+                android:text="清除"
+
+        />
+    </RelativeLayout>
+
+</LinearLayout>

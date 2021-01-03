@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Base.BasePageActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="#EEB422"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/page_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:autoSizeMaxTextSize="80dp"
+                app:autoSizeMinTextSize="10dp"
+                android:maxLines="1"
+                app:autoSizeTextType="uniform"
+                android:text="1.数字"
+                android:textStyle="bold"
+                android:textColor="@color/colorblack"
+                android:textSize="30dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:gravity="center"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:id="@+id/page_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:maxLines="1"
+                app:autoSizeMaxTextSize="80dp"
+                app:autoSizeMinTextSize="10dp"
+                app:autoSizeTextType="uniform"
+                android:text="认识数字，培养孩子对数学的初步认识"
+                android:textColor="@color/colorwhite"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/red_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/top_layout"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            app:autoSizeMaxTextSize="80dp"
+            app:autoSizeMinTextSize="10dp"
+            android:maxLines="1"
+            app:autoSizeTextType="uniform"
+            android:text="做好准备"
+            android:textColor="@color/colorred"
+            android:textSize="28dp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginRight="8dp"
+            android:id="@+id/backtitle"
+            android:maxLines="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/top_layout"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_toRightOf="@id/red_text"
+            app:autoSizeMaxTextSize="80dp"
+            app:autoSizeMinTextSize="10dp"
+            app:autoSizeTextType="uniform"
+            android:text="掌握主要概念"
+            android:textColor="@color/colorblack"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginRight="8dp"
+            android:id="@+id/sub_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/red_text"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            app:autoSizeMaxTextSize="80dp"
+            app:autoSizeMinTextSize="10dp"
+            app:autoSizeTextType="uniform"
+            android:text="根据下图的水果种类，写出相应的数字"
+            android:textColor="@color/colorblack"
+            android:textStyle="bold" />
+
+
+        <FrameLayout
+            android:id="@+id/page_context"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/sub_description"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginBottom="0dp"
+            android:fillViewport="true"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:scrollbars="none">
+
+
+        </FrameLayout>
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/page_number"
+        android:layout_gravity="bottom|right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="01/06"
+        android:textStyle="bold"
+        android:textColor="@color/colorblack"/>
+    <ImageView
+        android:clickable="true"
+        android:id="@+id/page_exit"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="right"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/exit_blue"/>
+
+</FrameLayout>

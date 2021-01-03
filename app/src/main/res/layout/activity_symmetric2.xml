@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Levelfirst.Number2">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:maxLines="1"
+        android:layout_height="wrap_content"
+        android:text="对称之美"
+        android:textColor="@color/colorblack"
+        android:textStyle="bold"
+        app:autoSizeMaxTextSize="80dp"
+        app:autoSizeMinTextSize="2dp"
+        app:autoSizeTextType="uniform"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:gravity="center_vertical"
+        android:background="@drawable/radious"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:text="\t非常容易发现我们生活中有许许多多的对称物，对称在自然里是最容易观察到的，因为他们由稳定性和实用性联系起来。\n\t下述图形都是在自然界找到的对称物。图案中蝴蝶的一对翅膀和竹子中心都有一条对称线，并且六边形的雪花有六条对称线和一个旋转中心。由于重力的影响，他们都是垂直对称并且不是水平对称的。\n\t埃菲尔铁塔有一条垂直对称线，风车，一个将风能转换为动能的机器，有四个翅膀四个旋转点，铁轨有一条对称线所以火车能过安全的行驶。"
+        android:textColor="@color/colorblack"
+        app:autoSizeMaxTextSize="80dp"
+        app:autoSizeMinTextSize="2dp"
+        app:autoSizeTextType="uniform"/>
+
+
+    <ImageView
+        android:padding="10dp"
+        android:adjustViewBounds="true"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:src="@drawable/book3_section1_page2_img"
+        />
+
+</LinearLayout>

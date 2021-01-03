@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:id="@+id/context_mathfirst"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<RelativeLayout
+    android:id="@+id/rv"
+    android:layout_width="match_parent"
+    android:layout_height="50dp">
+    <ImageView
+        android:layout_centerVertical="true"
+        android:id="@+id/math_first_base_back"
+        android:layout_alignParentLeft="true"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/show_back"
+        android:scaleType="fitCenter"
+        />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:paddingRight="8dp"
+        android:paddingLeft="8dp"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:id="@+id/math_first_base_title"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/math_first_base_back"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="#cc0000"
+        android:autoSizeMaxTextSize="80dp"
+        android:autoSizeMinTextSize="2dp"
+        android:autoSizeTextType="uniform"
+        android:maxLines="1"
+        android:textColor="@color/colorwhite"
+        android:text="找出图形"/>
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_centerVertical="true"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toRightOf="@id/math_first_base_title">
+        <androidx.appcompat.widget.AppCompatTextView
+            app:autoSizeMaxTextSize="80dp"
+            app:autoSizeMinTextSize="2dp"
+            app:autoSizeTextType="uniform"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:textColor="@color/colorblue"
+            android:layout_marginLeft="8dp"
+            android:id="@+id/math_first_base_subtitle"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="四边形"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_below="@id/math_first_base_subtitle"
+            app:autoSizeMaxTextSize="80dp"
+            app:autoSizeMinTextSize="2dp"
+            app:autoSizeTextType="uniform"
+            android:maxLines="1"
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/math_first_base_title"
+            android:text="找出所有MAGSPACE四边形部件"
+            android:textColor="@color/colorblue"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:visibility="invisible"
+        android:autoSizeMaxTextSize="80dp"
+        android:autoSizeMinTextSize="2dp"
+        android:autoSizeTextType="uniform"
+        android:maxLines="1"
+        android:textColor="@color/colorblue"
+        android:textStyle="bold"
+        android:id="@+id/shengyv"
+        android:layout_toLeftOf="@id/score"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:autoLink="all"
+        android:layout_height="wrap_content"
+        android:text="剩余"
+       />
+
+    <ImageView
+        android:id="@+id/score"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:scaleType="fitCenter"
+        android:layout_centerVertical="true"
+        />
+
+
+</RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom|left"
+        >
+        <TextView
+            android:textStyle="bold"
+            android:textColor="@color/colorblue"
+            android:id="@+id/level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="01"
+            android:textSize="20dp"/>
+        <TextView
+            android:textColor="@color/colorblue"
+            android:id="@+id/from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="引人入胜的数学 来自MAGSPACE"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/arrow_left"
+        android:layout_gravity="center_vertical|left"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/arrow4_left" />
+
+    <ImageView
+        android:id="@+id/arrow_right"
+        android:scaleType="fitCenter"
+        android:layout_gravity="center_vertical|right"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/arrow4_right"
+        />
+
+
+
+
+</FrameLayout>

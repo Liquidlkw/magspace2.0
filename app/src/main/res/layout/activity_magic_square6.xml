@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LevelSecond.MagicSquare6">
+
+    <LinearLayout
+
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical">
+        <TextView
+            android:gravity="center"
+            android:maxLines="1"
+            android:autoSizeTextType="uniform"
+            android:text="使用给定卡片，排列数字使每行、每列三个三个数字和等于圆圈中数字"
+            android:textColor="@color/colorblack"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <ImageView
+                android:id="@+id/di2"
+                android:layout_margin="5dp"
+                android:background="@drawable/radious"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/digit2"/>
+            <ImageView
+                android:id="@+id/di3"
+                android:layout_margin="5dp"
+                android:background="@drawable/radious"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/digit3"/>
+            <ImageView
+                android:id="@+id/di4"
+                android:layout_margin="5dp"
+                android:background="@drawable/radious"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/digit4"/>
+            <ImageView
+                android:id="@+id/di5"
+                android:layout_margin="5dp"
+                android:background="@drawable/radious"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/digit5"/>
+            <ImageView
+                android:id="@+id/di6"
+                android:layout_margin="5dp"
+                android:background="@drawable/radious"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/digit6"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:background="@drawable/radious"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/book2_section2_page4_img2"/>
+
+            <include
+                android:layout_height="wrap_content"
+                layout="@layout/magiccell2"
+                android:layout_width="wrap_content" />
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <TextView
+            android:gravity="center"
+            android:maxLines="1"
+            android:autoSizeTextType="uniform"
+            android:text="使用给定卡片，排列数字使每行、每列三个三个数字和等于圆圈中数字"
+            android:textColor="@color/colorblack"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:background="@drawable/radious"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="120dp"
+                android:layout_height="40dp">
+                <TextView
+                    android:textColor="@color/colorblack"
+                    android:gravity="center"
+                    android:background="@drawable/square"
+                    android:text="10"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+
+                <TextView
+                    android:textColor="@color/colorblack"
+                    android:gravity="center"
+                    android:background="@drawable/square"
+                    android:text="3"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+
+                <EditText
+                    android:id="@+id/t1"
+                    android:textColor="@color/colorblack"
+                    android:gravity="center"
+                    android:background="@drawable/square"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/t2"
+                    android:textColor="@color/colorblack"
+                    android:gravity="center"
+                    android:background="@drawable/square"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+
+                <TextView
+                    android:textColor="@color/colorblack"
+                    android:gravity="center"
+                    android:background="@drawable/square"
+                    android:text="7"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+
+                <EditText
+                    android:id="@+id/t3"
+                    android:textColor="@color/colorblack"
+                    android:gravity="center"
+                    android:background="@drawable/square"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/t4"
+                    android:textColor="@color/colorblack"
+                    android:gravity="center"
+                    android:background="@drawable/square"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+
+                <TextView
+                    android:textColor="@color/colorblack"
+                    android:gravity="center"
+                    android:background="@drawable/square"
+                    android:text="11"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+
+                <EditText
+                    android:id="@+id/t5"
+                    android:textColor="@color/colorblack"
+                    android:gravity="center"
+                    android:background="@drawable/square"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

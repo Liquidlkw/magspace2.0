@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.magspace">
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.hardware.location.gps" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:resizeableActivity="true"
+        android:roundIcon="@mipmap/logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".model.BluechoiceActivity"></activity>
+        <activity android:name=".ui.Blue_maze_Activity"></activity>
+        <activity android:name=".model.BlueMainActivity"></activity>
+        <activity android:name=".ui.Ble_Activity" />
+
+        <service
+            android:name=".service.BluetoothLeService"
+            android:enabled="true" />
+
+        <activity
+            android:name=".ui.DebugActivity"
+            android:resizeableActivity="true" />
+        <activity android:name=".MatchPerson.MathPersonActivity" />
+        <activity
+            android:name=".model.AvidetailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="fullSensor" />
+        <activity android:name=".LevelThird.Half6" />
+        <activity android:name=".LevelThird.Half5" />
+        <activity android:name=".LevelThird.Half4" />
+        <activity android:name=".LevelThird.Half3" />
+        <activity android:name=".LevelThird.Half2" />
+        <activity android:name=".LevelThird.Half1" />
+        <activity android:name=".LevelThird.Half" />
+        <activity android:name=".LevelThird.Regular6" />
+        <activity android:name=".LevelThird.Regular5" />
+        <activity android:name=".LevelThird.Regular4" />
+        <activity android:name=".LevelThird.Regular3" />
+        <activity android:name=".LevelThird.Regular2" />
+        <activity android:name=".LevelThird.Regular1" />
+        <activity android:name=".LevelThird.Regular" />
+        <activity android:name=".LevelThird.Solid6" />
+        <activity android:name=".LevelThird.Solid5" />
+        <activity android:name=".LevelThird.Solid4" />
+        <activity android:name=".LevelThird.Solid3" />
+        <activity android:name=".LevelThird.Solid2" />
+        <activity android:name=".LevelThird.Solid1" />
+        <activity android:name=".LevelThird.Solid" />
+        <activity android:name=".LevelThird.Circle6" />
+        <activity android:name=".LevelThird.Circle5" />
+        <activity android:name=".LevelThird.Circle4" />
+        <activity android:name=".LevelThird.Circle3" />
+        <activity android:name=".LevelThird.Circle2" />
+        <activity android:name=".LevelThird.Circle1" />
+        <activity android:name=".LevelThird.Circle" />
+        <activity android:name=".LevelThird.Block6" />
+        <activity android:name=".LevelThird.Block5" />
+        <activity android:name=".LevelThird.Block4" />
+        <activity android:name=".LevelThird.Block3" />
+        <activity android:name=".LevelThird.Block2" />
+        <activity android:name=".LevelThird.Block1" />
+        <activity android:name=".LevelThird.Block" />
+        <activity android:name=".LevelThird.Chess6" />
+        <activity android:name=".LevelThird.Chess5" />
+        <activity android:name=".LevelThird.Chess4" />
+        <activity android:name=".LevelThird.Chess3" />
+        <activity android:name=".LevelThird.Chess2" />
+        <activity android:name=".LevelThird.Chess1" />
+        <activity android:name=".LevelThird.Chess" />
+        <activity android:name=".LevelThird.Angle6" />
+        <activity android:name=".LevelThird.Angle5" />
+        <activity android:name=".LevelThird.Angle4" />
+        <activity android:name=".LevelThird.Angle3" />
+        <activity android:name=".LevelThird.Angle2" />
+        <activity android:name=".LevelThird.Angle1" />
+        <activity android:name=".LevelThird.Angle" />
+        <activity android:name=".LevelThird.Symmetric6" />
+        <activity android:name=".LevelThird.Symmetric5" />
+        <activity android:name=".LevelThird.Symmetric4" />
+        <activity android:name=".LevelThird.Symmetric3" />
+        <activity android:name=".LevelThird.Symmetric2" />
+        <activity android:name=".LevelThird.Symmetric1" />
+        <activity android:name=".LevelThird.Symmetric" />
+        <activity android:name=".LevelSecond.Possibility5" />
+        <activity android:name=".LevelSecond.Possibility4" />
+        <activity android:name=".LevelSecond.Possibility3" />
+        <activity android:name=".LevelSecond.Possibility2" />
+        <activity android:name=".LevelSecond.Possibility1" />
+        <activity android:name=".LevelSecond.Possibility" />
+        <activity android:name=".LevelSecond.Four6" />
+        <activity android:name=".LevelSecond.Four5" />
+        <activity android:name=".LevelSecond.Four4" />
+        <activity android:name=".LevelSecond.Four3" />
+        <activity android:name=".LevelSecond.Four2" />
+        <activity android:name=".LevelSecond.Four1" />
+        <activity android:name=".LevelSecond.Four" />
+        <activity android:name=".LevelSecond.Cylinder6" />
+        <activity android:name=".LevelSecond.Cylinder5" />
+        <activity android:name=".LevelSecond.Cylinder4" />
+        <activity android:name=".LevelSecond.Cylinder3" />
+        <activity android:name=".LevelSecond.Cylinder2" />
+        <activity android:name=".LevelSecond.Cylinder1" />
+        <activity android:name=".LevelSecond.Cylinder" />
+        <activity android:name=".LevelSecond.Rectangular6" />
+        <activity android:name=".LevelSecond.Rectangular5" />
+        <activity android:name=".LevelSecond.Rectangular4" />
+        <activity android:name=".LevelSecond.Rectangular3" />
+        <activity android:name=".LevelSecond.Rectangular2" />
+        <activity android:name=".LevelSecond.Rectangular1" />
+        <activity android:name=".LevelSecond.Rectangular" />
+        <activity android:name=".LevelSecond.Dice6" />
+        <activity android:name=".LevelSecond.Dice5" />
+        <activity android:name=".LevelSecond.Dice4" />
+        <activity android:name=".LevelSecond.Dice3" />
+        <activity android:name=".LevelSecond.Dice2" />
+        <activity android:name=".LevelSecond.Dice1" />
+        <activity android:name=".LevelSecond.Dice" />
+        <activity android:name=".LevelSecond.Division6" />
+        <activity android:name=".LevelSecond.Division5" />
+        <activity android:name=".LevelSecond.Division4" />
+        <activity android:name=".LevelSecond.Division3" />
+        <activity android:name=".LevelSecond.Division2" />
+        <activity android:name=".LevelSecond.Division1" />
+        <activity android:name=".LevelSecond.Division" />
+        <activity android:name=".LevelSecond.MagicSquare6" />
+        <activity android:name=".LevelSecond.MagicSquare5" />
+        <activity android:name=".LevelSecond.MagicSquare4" />
+        <activity android:name=".LevelSecond.MagicSquare3" />
+        <activity android:name=".LevelSecond.MagicSquare2" />
+        <activity android:name=".LevelSecond.MagicSquare1" />
+        <activity android:name=".LevelSecond.MagicSquare" />
+        <activity android:name=".LevelSecond.SimilarPic6" />
+        <activity android:name=".LevelSecond.SimilarPic5" />
+        <activity android:name=".LevelSecond.SimilarPic4" />
+        <activity android:name=".LevelSecond.SimilarPic3" />
+        <activity android:name=".LevelSecond.SimilarPic2" />
+        <activity android:name=".LevelSecond.SimilarPic1" />
+        <activity android:name=".LevelSecond.SimilarPic" />
+
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.1" />
+
+        <activity android:name=".Levelfirst.Pic6" />
+        <activity android:name=".Levelfirst.Find6" />
+        <activity android:name=".Levelfirst.Find5" />
+        <activity android:name=".Levelfirst.Find4" />
+        <activity android:name=".Levelfirst.Find3" />
+        <activity android:name=".Levelfirst.Find2" />
+        <activity android:name=".Levelfirst.Find1" />
+        <activity android:name=".Levelfirst.Find" />
+        <activity android:name=".Levelfirst.ViewPoint6" />
+        <activity android:name=".Levelfirst.ViewPoint5" />
+        <activity android:name=".Levelfirst.ViewPoint4" />
+        <activity android:name=".Levelfirst.ViewPoint3" />
+        <activity android:name=".Levelfirst.ViewPoint2" />
+        <activity android:name=".Levelfirst.ViewPoint1" />
+        <activity android:name=".Levelfirst.ViewPoint" />
+        <activity android:name=".Levelfirst.ThreeDPIC6" />
+        <activity android:name=".Levelfirst.ThreeDPIC5" />
+        <activity android:name=".Levelfirst.ThreeDPIC4" />
+        <activity android:name=".Levelfirst.ThreeDPIC3" />
+        <activity android:name=".Levelfirst.ThreeDPIC2" />
+        <activity android:name=".Levelfirst.ThreeDPIC1" />
+        <activity android:name=".Levelfirst.ThreeDPIC" />
+        <activity android:name=".Levelfirst.Pic5" />
+        <activity android:name=".Levelfirst.Pic4" />
+        <activity android:name=".Levelfirst.Pic3" />
+        <activity android:name=".Levelfirst.Pic2" />
+        <activity android:name=".Levelfirst.Pic1" />
+        <activity android:name=".Levelfirst.Pic" />
+        <activity android:name=".AboutMe" />
+        <activity android:name=".Levelfirst.Height6" />
+        <activity android:name=".Levelfirst.Height5" />
+        <activity android:name=".Levelfirst.Height4" />
+        <activity
+            android:name=".Levelfirst.Height3"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Levelfirst.Height2" />
+        <activity android:name=".Levelfirst.Height1" />
+        <activity android:name=".Levelfirst.Height" />
+        <activity android:name=".Levelfirst.Weight6" />
+        <activity android:name=".Levelfirst.Weight5" />
+        <activity android:name=".Levelfirst.Weight4" />
+        <activity android:name=".Levelfirst.Weight3" />
+        <activity android:name=".Levelfirst.Weight2" />
+        <activity android:name=".Levelfirst.Weight1" />
+        <activity android:name=".Levelfirst.Weight" />
+        <activity android:name=".Levelfirst.Shape6" />
+        <activity android:name=".Levelfirst.Shape5" />
+        <activity android:name=".Levelfirst.Shape4" />
+        <activity android:name=".Levelfirst.Shape3" />
+        <activity android:name=".Levelfirst.Shape2" />
+        <activity android:name=".Levelfirst.Shape1" />
+        <activity android:name=".Levelfirst.Shape" />
+        <activity android:name=".Levelfirst.Number6" />
+        <activity android:name=".Levelfirst.Number5" />
+        <activity android:name=".Levelfirst.Number4" />
+        <activity android:name=".Levelfirst.Number3" />
+        <activity android:name=".Levelfirst.Number2" />
+        <activity android:name=".Levelfirst.Number1" />
+        <activity android:name=".Base.BasePageActivity" />
+        <activity android:name=".CreatePic.CreatePicStage" />
+        <activity android:name=".Catalog.MathSecondCatalog" />
+        <activity android:name=".Base.BaseCatalogActivity" />
+        <activity android:name=".model.BuildingdetailActivity" />
+        <activity android:name=".model.AviActivity" />
+        <activity android:name=".model.ProductActivity" />
+        <activity android:name=".model.CoursesActivity" />
+        <activity android:name=".model.BuildingDemoActivity" />
+        <activity android:name=".KnowNumber.KnowNumberStage" />
+        <activity android:name=".SymmertyPic.SymmertyPicStage" />
+        <activity android:name=".ThreeDPic.ThreeDStage" />
+        <activity android:name=".Levelfirst.Number" />
+        <activity
+            android:name=".FindPic.FindPicStage"
+            android:screenOrientation="fullSensor" />
+        <activity android:name=".Catalog.MathFirstCatalog" />
+        <activity android:name=".Base.BaseActivity" />
+        <activity
+            android:name=".Base.MathFirstBaseActivity"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.StartingWindowTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- 注册广播 -->
+        <receiver android:name=".Bean.HomeWatcherReceiver"></receiver>
+    </application>
+
+</manifest>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Levelfirst.Number2">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:maxLines="1"
+        android:layout_height="wrap_content"
+        android:text="荷鲁斯之眼"
+        android:textColor="@color/colorblack"
+        android:textStyle="bold"
+        app:autoSizeMaxTextSize="80dp"
+        app:autoSizeMinTextSize="2dp"
+        app:autoSizeTextType="uniform"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:gravity="center_vertical"
+        android:background="@drawable/radious"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:text="\t荷鲁斯在埃及神话中一个长着鹰脑袋的神。根据史书，他的叔叔赛斯，杀死了他的父亲奥西里斯，并且挖出荷鲁斯的眼睛并切碎，以便自己当国王。但透特，智慧之神，恢复并治疗了她。\n\t“荷鲁斯之眼”这个象征用来代表分数，重复被2除，1/2,1/4,1/8,1/16,1/32,1/64。根据神话，一个分数被赋值为一个部分，这个部分代表赛斯被切碎的部分。他们的总和对应，对应被透特治好的部分，应该能加上一个整数。然而事实上，六个分数之和为63/64。\n\t人们猜想透特使用魔力补上了那丢失掉的1/64。"
+        android:textColor="@color/colorblack"
+        app:autoSizeMaxTextSize="80dp"
+        app:autoSizeMinTextSize="2dp"
+        app:autoSizeTextType="uniform"/>
+
+
+    <ImageView
+        android:padding="10dp"
+        android:adjustViewBounds="true"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:src="@drawable/book2_section3_page2_img"
+        />
+
+</LinearLayout>

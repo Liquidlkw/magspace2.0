@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Levelfirst.Shape3">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:autoSizeMaxTextSize="80dp"
+            android:autoSizeMinTextSize="2dp"
+            android:autoSizeTextType="uniform"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="1.使用4个相同的三角形构建相同的图形"
+            android:textColor="@color/colorblack"/>
+
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_height="match_parent"
+            android:src="@drawable/book2_section1_page3_img1"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatTextView
+
+                app:autoSizeMaxTextSize="80dp"
+                app:autoSizeMinTextSize="2dp"
+                app:autoSizeTextType="uniform"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="2.使用4个正方形构建相同图形"
+                android:textColor="@color/colorblack"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                app:autoSizeMaxTextSize="80dp"
+                app:autoSizeMinTextSize="2dp"
+                app:autoSizeTextType="uniform"
+                android:maxLines="1"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  3.使用4个菱形构建相同图形"
+                android:textColor="@color/colorblack"
+                android:textSize="15dp"/>
+
+        </LinearLayout>
+
+
+        <ImageView
+
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_height="match_parent"
+            android:src="@drawable/book2_section1_page3_img2"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatTextView
+                app:autoSizeMaxTextSize="80dp"
+                app:autoSizeMinTextSize="2dp"
+                app:autoSizeTextType="uniform"
+                android:maxLines="1"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="4.使用4个矩形构建相同图形"
+                android:textColor="@color/colorblack"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                app:autoSizeMaxTextSize="80dp"
+                app:autoSizeMinTextSize="2dp"
+                app:autoSizeTextType="uniform"
+                android:maxLines="1"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  5.使用4个梯形构建相同图形"
+                android:textColor="@color/colorblack"
+                android:textSize="15dp"/>
+
+        </LinearLayout>
+
+        <ImageView
+
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_height="match_parent"
+            android:src="@drawable/book2_section1_page3_img3"
+
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

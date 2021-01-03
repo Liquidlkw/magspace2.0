@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LevelSecond.MagicSquare4">
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <ImageView
+            android:id="@+id/digit2"
+            android:layout_margin="5dp"
+            android:background="@drawable/radious"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/digit2"/>
+        <ImageView
+            android:id="@+id/digit3"
+            android:layout_margin="5dp"
+            android:background="@drawable/radious"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/digit3"/>
+        <ImageView
+            android:id="@+id/digit4"
+            android:layout_margin="5dp"
+            android:background="@drawable/radious"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/digit4"/>
+        <ImageView
+            android:id="@+id/digit5"
+            android:layout_margin="5dp"
+            android:background="@drawable/radious"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/digit5"/>
+        <ImageView
+            android:id="@+id/digit6"
+            android:layout_margin="5dp"
+            android:background="@drawable/radious"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/digit6"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:background="@drawable/radious"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/book2_section2_page4_img2"/>
+
+    <include
+    android:layout_height="wrap_content"
+    layout="@layout/magicsquare4cell1"
+    android:layout_width="wrap_content" />
+
+    </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/number3"
+            android:textColor="@color/colorblack"
+            android:gravity="center"
+            android:text="3"
+            android:layout_margin="5dp"
+            android:background="@drawable/radious"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/number4"
+            android:textColor="@color/colorblack"
+            android:gravity="center"
+            android:text="4"
+            android:layout_margin="5dp"
+            android:background="@drawable/radious"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/number5"
+        android:textColor="@color/colorblack"
+        android:gravity="center"
+        android:text="5"
+        android:layout_margin="5dp"
+        android:background="@drawable/radious"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/number6"
+        android:textColor="@color/colorblack"
+        android:gravity="center"
+        android:text="6"
+        android:layout_margin="5dp"
+        android:background="@drawable/radious"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/number7"
+        android:textColor="@color/colorblack"
+        android:gravity="center"
+        android:text="7"
+        android:layout_margin="5dp"
+        android:background="@drawable/radious"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:background="@drawable/radious"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/book2_section2_page4_img3"/>
+
+        <include
+            android:layout_height="wrap_content"
+            layout="@layout/magicsquare4cell2"
+            android:layout_width="wrap_content" />
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

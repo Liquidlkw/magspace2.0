@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:gravity="top"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Levelfirst.Shape3">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:autoSizeMaxTextSize="80dp"
+            android:autoSizeMinTextSize="2dp"
+            android:autoSizeTextType="uniform"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="比较下列容器中的水位高度，找出所有比容器C盛水更多的容器"
+            android:textColor="@color/colorblack"/>
+
+    </LinearLayout>
+
+   <LinearLayout
+       android:gravity="center"
+       android:orientation="horizontal"
+       android:layout_width="match_parent"
+       android:layout_height="200dp">
+
+       <TextView
+           android:clickable="true"
+           android:id="@+id/A"
+           android:layout_margin="4dp"
+           android:gravity="center"
+           android:layout_width="wrap_content"
+           android:layout_height="100dp"
+           android:text="A"
+           android:textColor="@color/colorblack"
+           android:textSize="15dp"
+           android:drawableTop="@drawable/book1_section4_page6_img1"/>
+
+       <FrameLayout
+           android:clickable="true"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content">
+
+           <com.example.magspace.DiyView.CustomView
+               android:layout_gravity="center"
+               android:id="@+id/c1"
+               android:layout_width="50dp"
+               android:layout_height="100dp" />
+
+           <TextView
+               android:clickable="true"
+               android:layout_gravity="center"
+               android:id="@+id/B"
+               android:layout_margin="4dp"
+               android:gravity="center"
+               android:layout_width="wrap_content"
+               android:layout_height="100dp"
+               android:text="B"
+               android:textColor="@color/colorblack"
+               android:textSize="15dp"
+               android:drawableTop="@drawable/book1_section4_page6_img2"/>
+       </FrameLayout>
+
+       <TextView
+           android:clickable="true"
+           android:id="@+id/C"
+           android:layout_margin="4dp"
+           android:gravity="center"
+           android:layout_width="wrap_content"
+           android:layout_height="100dp"
+           android:text="C"
+           android:textColor="@color/colorblack"
+           android:textSize="15dp"
+           android:drawableTop="@drawable/book1_section4_page6_img3"/>
+       <FrameLayout
+           android:clickable="true"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content">
+           <com.example.magspace.DiyView.CustomView
+               android:layout_gravity="center"
+               android:id="@+id/c2"
+               android:layout_width="50dp"
+               android:layout_height="100dp"
+               />
+           <TextView
+               android:layout_gravity="center"
+               android:clickable="true"
+               android:id="@+id/D"
+               android:layout_margin="4dp"
+               android:gravity="center"
+               android:layout_width="wrap_content"
+               android:layout_height="100dp"
+               android:text="D"
+               android:textColor="@color/colorblack"
+               android:textSize="15dp"
+               android:drawableTop="@drawable/book1_section4_page6_img4"/>
+       </FrameLayout>
+       <TextView
+           android:clickable="true"
+           android:id="@+id/E"
+           android:layout_margin="4dp"
+           android:gravity="center"
+           android:layout_width="wrap_content"
+           android:layout_height="100dp"
+           android:text="E"
+           android:textColor="@color/colorblack"
+           android:textSize="15dp"
+           android:drawableTop="@drawable/book1_section4_page6_img5"/>
+
+   </LinearLayout>
+
+
+    <LinearLayout
+
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:autoSizeMaxTextSize="80dp"
+            android:autoSizeMinTextSize="2dp"
+            android:autoSizeTextType="uniform"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="比较学校 邮局 火车站的高度，按从高到低的顺序排列"
+            android:textColor="@color/colorblack"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/school"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:text="学校"
+            android:textColor="@color/colorblack"
+            android:textSize="15dp"
+            android:drawableTop="@drawable/book1_section4_page6_img6"/>
+
+        <TextView
+            android:id="@+id/postoffic"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:text="邮局"
+            android:textColor="@color/colorblack"
+            android:textSize="15dp"
+            android:drawableTop="@drawable/book1_section4_page6_img7"/>
+
+        <TextView
+            android:id="@+id/train"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:text="火车站"
+            android:textColor="@color/colorblack"
+            android:textSize="15dp"
+            android:drawableTop="@drawable/book1_section4_page6_img8"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/answe"
+        android:textSize="15dp"
+        android:textColor="@color/colorblack"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+</LinearLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Base.BaseCatalogActivity">
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            android:layout_marginLeft="32dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="32dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:id="@+id/title_catalog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="引人入胜的数学，启蒙孩子对数学的初步认识"
+                android:textSize="20dp"
+                android:textColor="#FF8C00"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"
+                />
+
+                <LinearLayout
+                    android:id="@+id/context_catalog"
+                    android:layout_below="@id/title_catalog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="16dp">
+
+            </LinearLayout>
+
+            </RelativeLayout>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:id="@+id/bottom_selector"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/one"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/grade1_btn"
+        android:text="一\n级"
+        android:textStyle="bold"
+        android:textColor="#ffffff"/>
+
+        <Button
+            android:id="@+id/two"
+            android:paddingTop="25dp"
+            android:paddingBottom="25dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/grade2_btn"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:text="二\n级"/>
+
+        <Button
+            android:id="@+id/three"
+            android:paddingTop="25dp"
+            android:paddingBottom="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/grade3_btn"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:text="三\n级"/>
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>

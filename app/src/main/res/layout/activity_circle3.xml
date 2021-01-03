@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Levelfirst.Shape3">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:autoSizeMaxTextSize="80dp"
+            android:autoSizeMinTextSize="2dp"
+            android:autoSizeTextType="uniform"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="阿基米德利用如下方法找到π的值，圆的周长比圆内多边形周长更长，比包含该圆的多边形短。"
+            android:textColor="@color/colorblack"/>
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+        <ImageView
+            android:padding="4dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_height="match_parent"
+            android:src="@drawable/book3_section5_page3_img1"
+            />
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_height="match_parent"
+        android:src="@drawable/book3_section5_page3_img1_2"
+        />
+
+</LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatTextView
+
+                app:autoSizeMaxTextSize="80dp"
+                app:autoSizeMinTextSize="2dp"
+                app:autoSizeTextType="uniform"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="1.用四个扇区准备一个圆，同时准备大正方形和六边形。"
+                android:textColor="@color/colorblack"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                app:autoSizeMaxTextSize="80dp"
+                app:autoSizeMinTextSize="2dp"
+                app:autoSizeTextType="uniform"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="  2.把六边形放到圆内，把正方形放到圆外。"
+                android:textColor="@color/colorblack"
+                android:textSize="15dp"/>
+
+        </LinearLayout>
+
+
+        <ImageView
+
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_height="match_parent"
+            android:src="@drawable/book3_section5_page3_img2"/>
+
+    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatTextView
+        app:autoSizeMaxTextSize="80dp"
+        app:autoSizeMinTextSize="2dp"
+        app:autoSizeTextType="uniform"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3.通过它们的周长发现π的范围。"
+        android:textColor="@color/colorblack"
+        android:textSize="15dp"/>
+    <LinearLayout
+        android:layout_weight="0.3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"></LinearLayout>
+
+
+</LinearLayout>

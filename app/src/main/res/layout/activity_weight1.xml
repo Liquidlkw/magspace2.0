@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Levelfirst.Weight1">
+
+    <ImageView
+        android:adjustViewBounds="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:src="@drawable/book1_section3_page1_img"
+        />
+    <TextView
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorblack"
+        android:textSize="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(1)苹果比香蕉?"/>
+
+    <RadioGroup
+        android:id="@+id/q1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/a1"
+            android:textStyle="bold"
+            android:text="重"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/a2"
+            android:textStyle="bold"
+            android:text="轻"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RadioGroup>
+
+    <TextView
+        android:textSize="15dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorblack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(2)苹果比草莓?"/>
+
+    <RadioGroup
+        android:id="@+id/q2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/a3"
+            android:textStyle="bold"
+            android:text="重"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/a4"
+            android:textStyle="bold"
+            android:text="轻"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RadioGroup>
+
+
+</LinearLayout>

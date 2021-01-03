@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Levelfirst.Shape3">
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="1.使用两个长方形和四个正方形制作一个立体图形 "
+        android:textColor="@color/colorblack"/>
+
+
+
+    <ImageView
+        android:padding="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:src="@drawable/book2_section5_page3_img1"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="2.使用两个正方形和四个小长形制作一个立体图形"
+        android:textColor="@color/colorblack"/>
+
+
+    <ImageView
+        android:padding="20dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:src="@drawable/book2_section5_page3_img2"/>
+
+
+</LinearLayout>

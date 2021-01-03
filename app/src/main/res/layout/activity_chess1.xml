@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/chess1"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LevelThird.Chess1">
+
+    <!--<GridLayout-->
+        <!--android:orientation="horizontal"-->
+        <!--android:background="@color/colorblack"-->
+        <!--android:columnCount="4"-->
+        <!--android:rowCount="4"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<TextView-->
+            <!--android:padding="8dp"-->
+            <!--android:layout_gravity="fill"-->
+            <!--android:background="@color/colorwhite"-->
+            <!--android:layout_marginRight="1dp"-->
+            <!--android:layout_marginTop="1dp"-->
+            <!--android:layout_marginLeft="1dp"-->
+            <!--android:layout_marginBottom="1dp"-->
+            <!--android:textColor="@color/colorblack"-->
+            <!--android:textSize="15dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="规则多边形"-->
+            <!--app:layout_rowWeight="1"-->
+            <!--app:layout_columnWeight="1"-->
+
+            <!--/>-->
+        <!--<ImageView-->
+            <!--app:layout_rowWeight="1"-->
+            <!--app:layout_columnWeight="1"-->
+            <!--android:layout_gravity="fill"-->
+            <!--android:padding="4dp"-->
+            <!--android:layout_marginTop="1dp"-->
+            <!--android:layout_marginBottom="1dp"-->
+            <!--android:layout_marginRight="1dp"-->
+            <!--android:src="@drawable/book3_section3_page1_img1"-->
+            <!--android:background="@color/colorwhite"-->
+            <!--android:textColor="@color/colorblack"-->
+            <!--android:textSize="15dp"-->
+            <!--android:gravity="center"-->
+
+            <!--/>-->
+        <!--<ImageView-->
+            <!--app:layout_rowWeight="1"-->
+            <!--app:layout_columnWeight="1"-->
+            <!--android:layout_gravity="fill"-->
+
+            <!--android:padding="4dp"-->
+            <!--android:layout_marginTop="1dp"-->
+            <!--android:layout_marginBottom="1dp"-->
+            <!--android:layout_marginRight="1dp"-->
+            <!--android:src="@drawable/book3_section3_page1_img2"-->
+            <!--android:background="@color/colorwhite"-->
+            <!--android:textColor="@color/colorblack"-->
+            <!--android:textSize="15dp"-->
+            <!--android:gravity="center"-->
+
+            <!--/>-->
+        <!--<ImageView-->
+            <!--app:layout_rowWeight="1"-->
+            <!--app:layout_columnWeight="1"-->
+            <!--android:layout_gravity="fill"-->
+
+            <!--android:padding="4dp"-->
+            <!--android:layout_marginTop="1dp"-->
+            <!--android:layout_marginBottom="1dp"-->
+            <!--android:layout_marginRight="1dp"-->
+            <!--android:src="@drawable/book3_section3_page1_img3"-->
+            <!--android:background="@color/colorwhite"-->
+            <!--android:textColor="@color/colorblack"-->
+            <!--android:textSize="15dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="123"-->
+
+            <!--/>-->
+
+        <!--<TextView-->
+            <!--android:padding="4dp"-->
+            <!--android:layout_gravity="fill"-->
+            <!--android:background="@color/colorwhite"-->
+            <!--android:layout_marginRight="1dp"-->
+
+            <!--android:layout_marginLeft="1dp"-->
+            <!--android:layout_marginBottom="1dp"-->
+            <!--android:textColor="@color/colorblack"-->
+            <!--android:textSize="15dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="三角形个数"-->
+            <!--app:layout_rowWeight="1"-->
+            <!--app:layout_columnWeight="1"-->
+
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:layout_gravity="fill"-->
+            <!--android:background="@color/colorwhite"-->
+            <!--android:layout_marginRight="1dp"-->
+
+
+            <!--android:layout_marginBottom="1dp"-->
+            <!--android:textColor="@color/colorblack"-->
+            <!--android:textSize="15dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="2"-->
+            <!--app:layout_rowWeight="1"-->
+            <!--app:layout_columnWeight="1"-->
+
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:layout_gravity="fill"-->
+            <!--android:background="@color/colorwhite"-->
+            <!--android:layout_marginRight="1dp"-->
+
+            <!--android:layout_marginBottom="1dp"-->
+            <!--android:textColor="@color/colorblack"-->
+            <!--android:textSize="15dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="3"-->
+            <!--app:layout_rowWeight="1"-->
+            <!--app:layout_columnWeight="1"-->
+
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:layout_gravity="fill"-->
+            <!--android:background="@color/colorwhite"-->
+            <!--android:layout_marginRight="1dp"-->
+
+            <!--android:layout_marginBottom="1dp"-->
+            <!--android:textColor="@color/colorblack"-->
+            <!--android:textSize="15dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="4"-->
+            <!--app:layout_rowWeight="1"-->
+            <!--app:layout_columnWeight="1"-->
+
+            <!--/>-->
+
+        <!--<TextView-->
+            <!--android:padding="4dp"-->
+            <!--android:layout_gravity="fill"-->
+            <!--android:background="@color/colorwhite"-->
+            <!--android:layout_marginRight="1dp"-->
+            <!--android:maxEms="5"-->
+            <!--android:layout_marginLeft="1dp"-->
+            <!--android:layout_marginBottom="1dp"-->
+            <!--android:textColor="@color/colorblack"-->
+            <!--android:textSize="15dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="所有三角形的内角和"-->
+            <!--app:layout_rowWeight="1"-->
+            <!--app:layout_columnWeight="1"-->
+
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:layout_gravity="fill"-->
+            <!--android:background="@color/colorwhite"-->
+            <!--android:layout_marginRight="1dp"-->
+
+
+            <!--android:layout_marginBottom="1dp"-->
+            <!--android:textColor="@color/colorblack"-->
+            <!--android:textSize="15dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="180°x2=360°"-->
+            <!--app:layout_rowWeight="1"-->
+            <!--app:layout_columnWeight="1"-->
+
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:layout_gravity="fill"-->
+            <!--android:background="@color/colorwhite"-->
+            <!--android:layout_marginRight="1dp"-->
+
+            <!--android:layout_marginBottom="1dp"-->
+            <!--android:textColor="@color/colorblack"-->
+            <!--android:textSize="15dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text=""-->
+            <!--app:layout_rowWeight="1"-->
+            <!--app:layout_columnWeight="1"-->
+
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:layout_gravity="fill"-->
+            <!--android:background="@color/colorwhite"-->
+            <!--android:layout_marginRight="1dp"-->
+
+            <!--android:layout_marginBottom="1dp"-->
+            <!--android:textColor="@color/colorblack"-->
+            <!--android:textSize="15dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text=""-->
+            <!--app:layout_rowWeight="1"-->
+            <!--app:layout_columnWeight="1"-->
+            <!--/>-->
+
+        <!--<TextView-->
+            <!--android:padding="4dp"-->
+            <!--android:layout_gravity="fill"-->
+            <!--android:background="@color/colorwhite"-->
+            <!--android:layout_marginRight="1dp"-->
+
+            <!--android:layout_marginLeft="1dp"-->
+            <!--android:layout_marginBottom="1dp"-->
+            <!--android:textColor="@color/colorblack"-->
+            <!--android:textSize="15dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="测量一个内角"-->
+            <!--app:layout_rowWeight="1"-->
+            <!--app:layout_columnWeight="1"-->
+
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:layout_gravity="fill"-->
+            <!--android:background="@color/colorwhite"-->
+            <!--android:layout_marginRight="1dp"-->
+
+            <!--android:layout_marginBottom="1dp"-->
+            <!--android:textColor="@color/colorblack"-->
+            <!--android:textSize="15dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="360°÷3=120°"-->
+            <!--app:layout_rowWeight="1"-->
+            <!--app:layout_columnWeight="1"-->
+
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:layout_gravity="fill"-->
+            <!--android:background="@color/colorwhite"-->
+            <!--android:layout_marginRight="1dp"-->
+
+            <!--android:layout_marginBottom="1dp"-->
+            <!--android:textColor="@color/colorblack"-->
+            <!--android:textSize="15dp"-->
+            <!--android:gravity="center"-->
+
+            <!--app:layout_rowWeight="1"-->
+            <!--app:layout_columnWeight="1"-->
+
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:layout_gravity="fill"-->
+            <!--android:background="@color/colorwhite"-->
+            <!--android:layout_marginRight="1dp"-->
+
+            <!--android:layout_marginBottom="1dp"-->
+            <!--android:textColor="@color/colorblack"-->
+            <!--android:textSize="15dp"-->
+            <!--android:gravity="center"-->
+
+            <!--app:layout_rowWeight="1"-->
+            <!--app:layout_columnWeight="1"-->
+
+            <!--/>-->
+
+    <!--</GridLayout>-->
+
+</LinearLayout>

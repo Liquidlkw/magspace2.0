@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Levelfirst.Shape3"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:padding="10dp"
+        android:maxLines="1"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:autoSizeMaxTextSize="80dp"
+        app:autoSizeMinTextSize="2dp"
+        app:autoSizeTextType="uniform"
+        android:text="正确连接做成车子的立体图形找到迷宫的出口"
+        android:textColor="@color/colorblack"/>
+
+    <ImageView
+        android:padding="10dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:src="@drawable/book1_section6_page4_img"
+        />
+
+
+</LinearLayout>

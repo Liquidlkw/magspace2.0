@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LevelThird.Symmetric4">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:gravity="center_vertical"
+        android:background="@drawable/radious"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1.从OH,MAGSPACE这10个字母中找到有对称线或旋转对称的字母。\n2.找到既有对称线，又有旋转对称点的字母。"
+        android:textColor="@color/colorblack"
+        app:autoSizeMaxTextSize="80dp"
+        app:autoSizeMinTextSize="2dp"
+        app:autoSizeTextType="uniform"/>
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/letter1"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="@color/colorblack"
+            android:text="O"/>
+        <TextView
+            android:id="@+id/letter2"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="@color/colorblack"
+            android:text="H"/>
+        <TextView
+            android:id="@+id/letter3"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="@color/colorblack"
+            android:text="M"/>
+        <TextView
+            android:id="@+id/letter5"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="@color/colorblack"
+            android:text="A"/>
+        <TextView
+            android:id="@+id/letter6"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="@color/colorblack"
+            android:text="G"/>
+        <TextView
+            android:id="@+id/letter7"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="@color/colorblack"
+            android:text="S"/>
+        <TextView
+            android:id="@+id/letter8"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="@color/colorblack"
+            android:text="P"/>
+        <TextView
+            android:id="@+id/letter9"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="@color/colorblack"
+            android:text="A"/>
+        <TextView
+            android:id="@+id/letter10"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="@color/colorblack"
+            android:text="C"/>
+        <TextView
+            android:id="@+id/letter11"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="@color/colorblack"
+            android:text="E"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/q1"
+            android:text="对称线：  "
+            android:textSize="20dp"
+            android:textColor="@color/colorblack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:id="@+id/result1"
+            android:padding="4dp"
+            android:background="@drawable/radious"
+            android:textSize="20dp"
+            android:textColor="@color/colorblack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/q2"
+            android:text="旋转对称：  "
+            android:textSize="20dp"
+            android:textColor="@color/colorblack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:id="@+id/result2"
+            android:padding="4dp"
+            android:background="@drawable/radious"
+            android:textSize="20dp"
+            android:textColor="@color/colorblack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/q3"
+            android:text="对称线和旋转对称：  "
+            android:textSize="20dp"
+            android:textColor="@color/colorblack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:id="@+id/result3"
+            android:padding="4dp"
+            android:background="@drawable/radious"
+            android:textSize="20dp"
+            android:textColor="@color/colorblack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

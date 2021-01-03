@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Levelfirst.Weight6">
+    <LinearLayout
+        android:clickable="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <ImageView
+            android:adjustViewBounds="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/book1_section8_page6_img1"/>
+        <LinearLayout
+            android:layout_marginTop="-40dp"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:clickable="true"
+                android:id="@+id/fin1"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:src="@drawable/book1_section8_page6_img1_cell1"/>
+            <ImageView
+                android:clickable="true"
+                android:id="@+id/fin2"
+                android:layout_weight="1"
+                android:layout_height="30dp"
+                android:layout_width="0dp"
+
+                android:src="@drawable/book1_section8_page6_img1_cell2"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <ImageView
+            android:adjustViewBounds="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/book1_section8_page6_img2"/>
+        <LinearLayout
+            android:layout_marginTop="-40dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/fin3"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:src="@drawable/book1_section8_page6_img1_cell3"/>
+            <ImageView
+                android:id="@+id/fin4"
+                android:layout_weight="1"
+                android:layout_height="30dp"
+                android:layout_width="0dp"
+                android:src="@drawable/book1_section8_page6_img1_cell4"/>
+            <ImageView
+                android:id="@+id/fin5"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:src="@drawable/book1_section8_page6_img1_cell5"
+                android:layout_height="30dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <ImageView
+            android:adjustViewBounds="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/book1_section8_page6_img3"/>
+        <LinearLayout
+            android:layout_marginTop="-40dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/fin6"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:src="@drawable/book1_section8_page6_img1_cell6"/>
+
+            <ImageView
+                android:id="@+id/find7"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:src="@drawable/book1_section8_page6_img1_cell7"
+                android:layout_height="30dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

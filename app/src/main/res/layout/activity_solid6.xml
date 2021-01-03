@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Levelfirst.Shape3">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:autoSizeMaxTextSize="80dp"
+        android:autoSizeMinTextSize="2dp"
+        android:autoSizeTextType="uniform"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:text="1.连接平面曲线及其对应的旋转体。"
+        android:textColor="@color/colorblack"/>
+    <LinearLayout
+        android:id="@+id/solid6"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatTextView
+                app:autoSizeMaxTextSize="80dp"
+                app:autoSizeMinTextSize="2dp"
+                app:autoSizeTextType="uniform"
+                android:maxLines="1"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="2.给定一个旋转体，指出绕对应旋转轴的平面曲线。"
+                android:textColor="@color/colorblack"/>
+
+        </LinearLayout>
+
+ <LinearLayout
+     android:orientation="horizontal"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
+
+     <ImageView
+         android:padding="10dp"
+         android:layout_weight="2"
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:src="@drawable/book3_section6_page6_img9"/>
+
+
+     <ImageView
+         android:id="@+id/image1"
+         android:padding="10dp"
+         android:layout_weight="1"
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:src="@drawable/book3_section6_page6_img10"/>
+
+     <ImageView
+         android:id="@+id/image2"
+         android:padding="10dp"
+         android:layout_weight="1"
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:src="@drawable/book3_section6_page6_img11"/>
+
+     <ImageView
+         android:id="@+id/image3"
+         android:padding="10dp"
+         android:layout_weight="1"
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:src="@drawable/book3_section6_page6_img12"/>
+
+     <ImageView
+         android:id="@+id/image4"
+         android:padding="10dp"
+         android:layout_weight="1"
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:src="@drawable/book3_section6_page6_img13"/>
+ </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

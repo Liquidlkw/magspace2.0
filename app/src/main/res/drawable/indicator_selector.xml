@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<!-- 按压时 -->
+<item android:drawable="@drawable/tab_star_on" android:state_enabled="true" />
+<item android:drawable="@drawable/tab_star_off" />
+</selector>
+
+
+<!--<selector xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+<!--<item android:state_pressed="true" android:drawable="@android:color/darker_gray"/>-->
+<!--&lt;!&ndash;<item android:drawable="@android:color/white"/>&ndash;&gt;-->
+
+<!--</selector>-->
+
+

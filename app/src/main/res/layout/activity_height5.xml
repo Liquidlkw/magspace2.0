@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".Levelfirst.Shape5">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:background="@drawable/radious"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:textSize="20dp"
+        android:autoSizeMaxTextSize="80dp"
+        android:autoSizeMinTextSize="2dp"
+        android:autoSizeTextType="uniform"
+        android:textColor="@color/colorblack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1.任意展开基本的MAGSPACE图形片。\n2.用油轮和吊形杆结合起来制作一个钓鱼杆。\n3.决定由谁开始，并在限定时间内挂上MAGSPACE图形片。\n4.最终悬挂图形片所连成的线更长的一方胜出。"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/book1_section4_page5_img" />
+
+</LinearLayout>

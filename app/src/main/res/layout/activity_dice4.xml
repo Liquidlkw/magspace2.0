@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LevelSecond.Dice4">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        app:autoSizeMaxTextSize="80dp"
+        app:autoSizeMinTextSize="2dp"
+        app:autoSizeTextType="uniform"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="在给定图形中添加一块正方形构成立方体，然后再正确位置画出这个正方体"
+        android:textColor="@color/colorblack"
+        android:textSize="15dp"/>
+
+    <LinearLayout
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+        android:src="@drawable/grey"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+        <ImageView
+            android:src="@drawable/grey"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <ImageView
+        android:src="@drawable/grey"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+        <ImageView
+        android:src="@drawable/grey"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+        <ImageView
+        android:src="@drawable/grey"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:src="@drawable/grey"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <ImageView
+            android:src="@drawable/yellow"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <ImageView
+            android:src="@drawable/yellow"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <ImageView
+            android:src="@drawable/grey"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <ImageView
+            android:src="@drawable/grey"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:src="@drawable/grey"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <ImageView
+            android:src="@drawable/grey"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <ImageView
+            android:src="@drawable/yellow"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <ImageView
+            android:src="@drawable/yellow"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <ImageView
+            android:src="@drawable/yellow"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:src="@drawable/grey"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <ImageView
+            android:src="@drawable/grey"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <ImageView
+            android:src="@drawable/grey"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <ImageView
+            android:src="@drawable/grey"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <ImageView
+            android:src="@drawable/grey"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+
+    </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:src="@drawable/grey"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+            <ImageView
+                android:src="@drawable/grey"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+            <ImageView
+                android:src="@drawable/grey"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+            <ImageView
+                android:src="@drawable/grey"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+            <ImageView
+                android:src="@drawable/grey"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:src="@drawable/grey"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+            <ImageView
+                android:src="@drawable/yellow"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+            <ImageView
+                android:src="@drawable/yellow"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+            <ImageView
+                android:src="@drawable/grey"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+            <ImageView
+                android:src="@drawable/grey"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:src="@drawable/grey"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+            <ImageView
+                android:src="@drawable/grey"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+            <ImageView
+                android:src="@drawable/yellow"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+            <ImageView
+                android:src="@drawable/yellow"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+            <ImageView
+                android:src="@drawable/grey"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:src="@drawable/grey"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+            <ImageView
+                android:src="@drawable/grey"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+            <ImageView
+                android:src="@drawable/grey"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+            <ImageView
+                android:src="@drawable/yellow"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+            <ImageView
+                android:src="@drawable/grey"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

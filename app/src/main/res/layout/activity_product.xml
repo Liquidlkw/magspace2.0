@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    >
+    <com.stx.xhb.xbanner.XBanner
+       android:paddingBottom="50dp"
+        android:paddingTop="50dp"
+        android:id="@+id/banner2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:AutoPlayTime="3000"
+        app:clipChildrenLeftRightMargin="70dp"
+        app:isAutoPlay="true"
+        app:isClipChildrenMode="true"
+        app:isHandLoop="true"
+        app:pointsPosition="CENTER"
+        app:pageChangeDuration="300"
+        app:bannerBottomMargin="20dp"
+        app:pointTopBottomPadding="10dp"
+        />
+
+
+</LinearLayout>

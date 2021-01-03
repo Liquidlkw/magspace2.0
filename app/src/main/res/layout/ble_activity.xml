@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@drawable/a_blue_bg_new" android:orientation="vertical">
+
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+    >
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="连接状态："
+                android:layout_marginStart="10dip"
+        />
+        <TextView
+                android:layout_width="160dp"
+                android:layout_height="57dp"
+
+                android:id="@+id/connect_state"
+        />
+
+    </LinearLayout>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="208dp"
+            android:layout_weight="3"
+            android:id="@+id/rev_sv"
+
+    >
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rev_tv"
+        />
+
+
+    </ScrollView>
+
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            android:layout_weight="4"
+    >
+        <Button
+                android:id="@+id/left_bth"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="@drawable/left_bth_select"
+                android:layout_toLeftOf="@id/come_bth"
+                android:layout_centerVertical="true"
+        />
+        <Button
+                android:id="@+id/right_bth"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_toRightOf="@id/stop_bth"
+                android:layout_centerVertical="true"
+                android:background="@drawable/right_bth_select"
+
+        />
+        <Button
+                android:id="@+id/stop_bth"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="@drawable/stop_button_select"
+                android:layout_centerInParent="true"
+
+        />
+        <Button
+                android:id="@+id/come_bth"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="@drawable/come_bth_select"
+
+                android:layout_centerHorizontal="true"
+
+                android:layout_above="@+id/back_bth" android:layout_marginBottom="109dp"/>
+        <Button
+                android:id="@+id/back_bth"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="@drawable/back_bth_select"
+                android:layout_below="@id/stop_bth"
+                android:layout_centerHorizontal="true"
+        />
+
+
+    </RelativeLayout>
+<!--    <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text=""-->
+<!--    ></TextView>-->
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/colororange"
+
+
+    >
+
+<!--                <EditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:id="@+id/send_et"-->
+<!--                    android:typeface="normal"-->
+<!--                    >-->
+<!--                </EditText>-->
+        <Button
+                android:id="@+id/maze_btn"
+                android:layout_width="2dp"
+                android:layout_height="2dp"
+
+                android:layout_centerInParent="true"
+
+        />
+        <Button
+                android:id="@+id/xun_btn"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_toRightOf="@id/maze_btn"
+                android:background="@drawable/clean_maze_selector"
+                android:text="寻迹"
+
+        />
+
+        <Button
+                android:id="@+id/tracing_btn"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_toLeftOf="@id/maze_btn"
+                android:background="@drawable/start_maze_selector"
+                android:text="返回"
+
+        />
+    </RelativeLayout>
+<!--    <Button-->
+<!--            android:id="@+id/come_btn"-->
+<!--            android:text="come"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:background="@drawable/answer_error"-->
+<!--            android:layout_height="73dp"/>-->
+
+
+</LinearLayout>

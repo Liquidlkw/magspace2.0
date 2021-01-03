@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Levelfirst.Shape1"
+    android:gravity="center"
+
+   >
+
+    <ImageView
+        android:adjustViewBounds="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/p1"
+        android:scaleType="fitCenter"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:src="@drawable/book1_section2_page1_img"/>
+
+    <ImageView
+        android:scaleType="fitCenter"
+        android:id="@+id/mid"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+
+        android:adjustViewBounds="true"
+        android:src="@drawable/book1_section2_page1_img1" />
+
+    <LinearLayout
+        android:adjustViewBounds="true"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    <ImageView
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_marginRight="10dp"
+        android:id="@+id/left"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/book1_section2_page1_img2"
+        />
+    <ImageView
+        android:adjustViewBounds="true"
+        android:layout_marginLeft="20dp"
+        android:scaleType="fitCenter"
+
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/book1_section2_page1_img3"
+        />
+    </LinearLayout>
+
+</LinearLayout>

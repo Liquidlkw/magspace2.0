@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Levelfirst.Number2">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:maxLines="1"
+        android:layout_height="wrap_content"
+        android:text="正多面体（柏拉图多面体）"
+        android:textColor="@color/colorblack"
+        android:textStyle="bold"
+        app:autoSizeMaxTextSize="80dp"
+        app:autoSizeMinTextSize="2dp"
+        app:autoSizeTextType="uniform"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:gravity="center_vertical"
+        android:background="@drawable/radious"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:text="\t正多面体是指具有多个相同正多边形组成的几何图形，其各顶点对应的面数相等。\n\t希腊哲学家柏拉图认为世界是由水、火、土、空气四种元素组成，并且这四种元素具有正多面体的形状。他认为：明亮的、尖的火具有四面体形状；土这种稳定的元素具有立方体形状；水这种流动性元素具有正十二面体形状，它能够很容易的转动；空气这种不稳定的元素具有正八面体形状，抓住其中两个顶点末端可以将其旋转；而整个宇宙则具有正二十面体形状。由于柏拉图的理论，正多面体有时也称为柏拉图体。"
+        android:textColor="@color/colorblack"
+        app:autoSizeMaxTextSize="80dp"
+        app:autoSizeMinTextSize="2dp"
+        app:autoSizeTextType="uniform"/>
+
+
+    <ImageView
+        android:padding="10dp"
+        android:adjustViewBounds="true"
+        android:layout_width="match_parent"
+        android:layout_weight="0.5"
+        android:layout_height="0dp"
+        android:src="@drawable/book3_section7_page2_img"
+        />
+
+</LinearLayout>

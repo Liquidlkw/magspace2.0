@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LevelThird.Circle6">
+    <TextView
+        android:text="1.计算下面圆的周长"
+        android:textColor="@color/colorblack"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        <ImageView
+            android:padding="10dp"
+            android:src="@drawable/book3_section5_page6_img1"
+            android:layout_weight="4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+
+            <TextView
+
+                android:id="@+id/t1"
+                android:background="@drawable/radious"
+                android:textColor="@color/colorblack"
+                android:gravity="center"
+                android:layout_weight="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:src="@drawable/book3_section5_page6_img2"
+                android:layout_weight="4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:inputType="number"
+                android:id="@+id/t2"
+                android:background="@drawable/radious"
+                android:textColor="@color/colorblack"
+                android:gravity="center"
+
+                android:layout_weight="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:text="2.丽莎骑自行车环绕操场周长，若自行车前轮半径为50cm,轮子自动转动100次后完成绕行，则该操场的周长是多少cm?"
+        android:textColor="@color/colorblack"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:padding="4dp"
+        android:inputType="number"
+        android:maxLength="6"
+        android:id="@+id/t3"
+        android:gravity="center"
+        android:layout_gravity="right"
+        android:background="@drawable/radious"
+        android:layout_width="150dp"
+        android:layout_height="20dp" />
+    <ImageView
+        android:padding="40dp"
+        android:src="@drawable/book3_section5_page6_img3"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+</LinearLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:gravity="center_horizontal"
+   android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LevelSecond.Possibility1">
+
+    <ImageView
+        android:id="@+id/c1"
+        android:scaleType="fitXY"
+        android:layout_margin="4dp"
+        android:textColor="@color/colorblack"
+        android:gravity="center"
+        android:src="@drawable/book2_section8_page1_img1"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+    <ImageView
+        android:id="@+id/c2"
+        android:scaleType="fitXY"
+        android:layout_margin="4dp"
+        android:textColor="@color/colorblack"
+        android:gravity="center"
+        android:src="@drawable/book2_section8_page1_img2"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+    <ImageView
+        android:id="@+id/c3"
+        android:scaleType="fitXY"
+        android:layout_margin="4dp"
+        android:textColor="@color/colorblack"
+        android:gravity="center"
+        android:src="@drawable/book2_section8_page1_img3"
+
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+
+
+
+
+</LinearLayout>

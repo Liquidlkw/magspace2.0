@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Levelfirst.ThreeDPIC6">
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/book1_section6_page6_img0"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <ImageView
+            android:padding="10dp"
+            android:id="@+id/A"
+            android:layout_margin="10dp"
+            android:src="@drawable/book1_section6_page6_img1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:padding="10dp"
+            android:id="@+id/B"
+            android:layout_margin="10dp"
+            android:src="@drawable/book1_section6_page6_img2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <ImageView
+            android:id="@+id/C"
+            android:layout_margin="10dp"
+            android:src="@drawable/book1_section6_page6_img3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:padding="10dp"
+            android:id="@+id/D"
+            android:layout_margin="10dp"
+            android:src="@drawable/book1_section6_page6_img4"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+</LinearLayout>

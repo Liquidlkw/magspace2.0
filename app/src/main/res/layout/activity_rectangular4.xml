@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LevelSecond.Rectangular4">
+
+    <TextView
+        android:textSize="15dp"
+        android:textColor="@color/colorblack"
+        android:text="检验一个立方体和长方体，用正确的数字填空"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:src="@drawable/book2_section5_page4_img"/>
+
+    <TextView
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:textSize="15dp"
+        android:textColor="@color/colorblack"
+        android:text="相似点"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_marginTop="8dp"
+        android:padding="10dp"
+        android:background="@drawable/radious"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+            android:textSize="15dp"
+            android:textColor="@color/colorblack"
+            android:text="他们都有（6）个面。"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="15dp"
+            android:textColor="@color/colorblack"
+            android:text="他们都有（8）个顶点。"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="15dp"
+            android:textColor="@color/colorblack"
+            android:text="他们都有（12）个边。"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:textSize="15dp"
+        android:textColor="@color/colorblack"
+        android:text="不同点"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:padding="10dp"
+            android:background="@drawable/radious"
+            android:gravity="center_vertical"
+            android:textSize="15dp"
+            android:textColor="@color/colorblack"
+            android:text="1.立方体的面有一个正方形的尺寸，长方体的面有一个长方形的尺寸。\n2.所有立方体的变成相同，但长方体的边长不相同。"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"></LinearLayout>
+
+
+
+
+
+</LinearLayout>

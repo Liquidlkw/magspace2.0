@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Levelfirst.Number2">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:maxLines="1"
+        android:layout_height="wrap_content"
+        android:text="德摩根（1806-1871）"
+        android:textColor="@color/colorblack"
+        android:textStyle="bold"
+        app:autoSizeMaxTextSize="80dp"
+        app:autoSizeMinTextSize="2dp"
+        app:autoSizeTextType="uniform"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:gravity="center_vertical"
+        android:background="@drawable/radious"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_weight="2"
+        android:layout_height="0dp"
+       android:text="\t一个名叫德摩根的英国数学家和逻辑学家，以他的“德摩根定律”闻名于世，他22岁就被任命为英国伦敦大学的数学教授。\n\t一天。德摩根收到了这样一份来信，从1到15这几个数字可以用4个9表示，如：1用（9/9x(9/9）,2用（9/9）+（9/9），3用（9+9+9）/9表示，用这样的方式拼凑数字非常有趣，但是这样有数字意义吗？德摩根发出了他的回复。他在教育上有意义，尤其值得尝试用大于15的去拼凑数字，这个谜题用四个九和运算符号拼凑不同的数字为四九。"
+        android:textColor="@color/colorblack"
+        app:autoSizeMaxTextSize="80dp"
+        app:autoSizeMinTextSize="2dp"
+        app:autoSizeTextType="uniform"/>
+
+
+    <ImageView
+        android:padding="10dp"
+        android:adjustViewBounds="true"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:src="@drawable/book2_section7_page2_img"
+        />
+
+</LinearLayout>
