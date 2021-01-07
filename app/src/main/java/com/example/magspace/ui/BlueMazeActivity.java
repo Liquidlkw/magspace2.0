@@ -3,16 +3,27 @@ package com.example.magspace.ui;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattDescriptor;
 import android.bluetooth.BluetoothGattService;
-import android.content.*;
+import android.content.BroadcastReceiver;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.ServiceConnection;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.*;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ScrollView;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
+
 import com.example.magspace.R;
 import com.example.magspace.service.BluetoothLeService;
 
@@ -21,13 +32,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import static com.example.magspace.model.BlueMainActivity.*;
-
-public class Blue_maze_Activity extends BasActivity implements View.OnClickListener {
-    private final static String TAG = Ble_Activity.class.getSimpleName();
+public class BlueMazeActivity extends BLEBaseActivity implements View.OnClickListener {
+    private final static String TAG = BleActivity.class.getSimpleName();
     //蓝牙4.0的UUID,其中0000ffe1-0000-1000-8000-00805f9b34fb是广州汇承信息科技有限公司08蓝牙模块的UUID
     public static String HEART_RATE_MEASUREMENT = "0000ffe1-0000-1000-8000-00805f9b34fb";
-    public static String EXTRAS_DEVICE_NAME = "DEVICE_NAME";;
+    public static String EXTRAS_DEVICE_NAME = "DEVICE_NAME";
+    ;
     public static String EXTRAS_DEVICE_ADDRESS = "DEVICE_ADDRESS";
     public static String EXTRAS_DEVICE_RSSI = "RSSI";
     //蓝牙连接状态
@@ -51,16 +61,14 @@ public class Blue_maze_Activity extends BasActivity implements View.OnClickListe
     private ArrayList<ArrayList<BluetoothGattCharacteristic>> mGattCharacteristics = new ArrayList<ArrayList<BluetoothGattCharacteristic>>();
     //蓝牙特征值
     private static BluetoothGattCharacteristic target_chara = null;
-    public static  byte[] revDataForCharacteristic;
+    public static byte[] revDataForCharacteristic;
     private Handler mhandler = new Handler();
     private Handler myHandler = new Handler(new Handler.Callback() {
         @Override
         public boolean handleMessage(@NonNull Message msg) {
-            switch (msg.what)
-            {
+            switch (msg.what) {
                 // 判断发送的消息
-                case 1:
-                {
+                case 1: {
                     // 更新View
                     String state = msg.getData().getString("connect_state1");
                     connect_state1.setText(state);
@@ -97,78 +105,79 @@ public class Blue_maze_Activity extends BasActivity implements View.OnClickListe
 
     //route[count].equals("a") == true
     //遍历数组，返回数组的有效长度
-    public int count_route(String data[]){
+    public int count_route(String data[]) {
         int j = 0;
-        for (String i:data
+        for (String i : data
         ) {
 
-            if(data[j] == null){
+            if (data[j] == null) {
                 break;
             }
-            j+=1;
+            j += 1;
         }
         return j;
     }
+
     //----------点击按钮将按钮数据加到屏幕上并将数据添加到数组上---------
-    public void  view_bth(String data){
+    public void view_bth(String data) {
         //new Blue_maze_Activity.sendDataThread(route[count]);//发送下一条指令
         String kk;
-        if(data.equals("a") == true){
+        if (data.equals("a")) {
             kk = "直行0.1米";
-            if(count_route(route) <= 49){
+            if (count_route(route) <= 49) {
                 route[count_route(route)] = "a";
                 rev_str += kk + "-->";
             }
-        }else if (data.equals("e") == true){
+        } else if (data.equals("e")) {
             kk = "直行0.2米";
-            if(count_route(route) <= 49){
+            if (count_route(route) <= 49) {
                 route[count_route(route)] = "e";
                 rev_str += kk + "-->";
             }
-        }else if(data.equals("b") == true){
+        } else if (data.equals("b")) {
             kk = "左0.1米";
-            if(count_route(route) <= 49){
+            if (count_route(route) <= 49) {
                 route[count_route(route)] = "b";
                 rev_str += kk + "-->";
             }
-        }else if(data.equals("c") == true){
+        } else if (data.equals("c")) {
             kk = "右0.1米";
-            if(count_route(route) <= 49){
+            if (count_route(route) <= 49) {
                 route[count_route(route)] = "c";
                 rev_str += kk + "-->";
             }
-        }else if(data.equals("d") == true){
+        } else if (data.equals("d")) {
             kk = "后退0.1米";
-            if(count_route(route) <= 49){
+            if (count_route(route) <= 49) {
                 route[count_route(route)] = "d";
                 rev_str += kk + "-->";
             }
-        }else if(data.equals("g") == true){
+        } else if (data.equals("g")) {
             kk = "左前0.1米";
-            if(count_route(route) <= 49){
+            if (count_route(route) <= 49) {
                 route[count_route(route)] = "g";
                 rev_str += kk + "-->";
             }
-        }else if(data.equals("h") == true){
+        } else if (data.equals("h")) {
             kk = "右前0.1米";
-            if(count_route(route) <= 49){
+            if (count_route(route) <= 49) {
                 route[count_route(route)] = "h";
                 rev_str += kk + "-->";
             }
-        }else if(data.equals("k") == true){
+        } else if (data.equals("k")) {
             kk = "左后0.1米";
-            if(count_route(route) <= 49){
+            if (count_route(route) <= 49) {
                 route[count_route(route)] = "k";
                 rev_str += kk + "-->";
             }
-        }else if(data.equals("m") == true){
+        } else if (data.equals("m")) {
             kk = "右后0.1米";
-            if(count_route(route) <= 49){
+            if (count_route(route) <= 49) {
                 route[count_route(route)] = "m";
                 rev_str += kk + " --> ";
             }
-        }else {
-            if((count_route(route) <= 49)&&(count_route(route) >= 1)){
+        } else {
+            if ((count_route(route) <= 49) && (count_route(route) >= 1)) {
                 kk = "结束";
                 route[count_route(route)] = "o";
                 rev_str += kk;
@@ -176,11 +185,9 @@ public class Blue_maze_Activity extends BasActivity implements View.OnClickListe
         }
         //rev_str += kk;
         //更新UI
-        runOnUiThread(new Runnable()
-        {
+        runOnUiThread(new Runnable() {
             @Override
-            public void run()
-            {
+            public void run() {
                 route_tv.setText(rev_str);
                 route_sv.scrollTo(0, route_tv.getMeasuredHeight());
                 System.out.println("rev:" + rev_str);
@@ -188,14 +195,17 @@ public class Blue_maze_Activity extends BasActivity implements View.OnClickListe
         });
 
     }
+
     //----------收到返回值“f”执行下一条命令
-    public void come(){
-        new Blue_maze_Activity.sendDataThread(route[count]);//发送下一条指令
-        count += 1 ;//计数加一
+    public void come() {
+        new BlueMazeActivity.sendDataThread(route[count]);//发送下一条指令
+        count += 1;//计数加一
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        hideBottomUIMenu();
         setContentView(R.layout.activity_ble_maze);
         b = getIntent().getExtras();
         //从意图获取显示的蓝牙信息
@@ -214,37 +224,39 @@ public class Blue_maze_Activity extends BasActivity implements View.OnClickListe
     public void onClick(View view) {
         //传入结束位“o”进入数组最后一位
         view_bth("o");
-        new Blue_maze_Activity.sendDataThread("n");//开始按键
+        new BlueMazeActivity.sendDataThread("n");//开始按键
 
     }
+
     @Override
-    protected void onDestroy()
-    {
+    protected void onDestroy() {
         super.onDestroy();
         //解除广播接收器
         unregisterReceiver(mGattUpdateReceiver);
         mBluetoothLeService = null;
+        mhandler.removeCallbacksAndMessages(null);
+        myHandler.removeCallbacksAndMessages(null);
     }
+
     // Activity出来时候，绑定广播接收器，监听蓝牙连接服务传过来的事件
     @Override
-    protected void onResume()
-    {
+    protected void onResume() {
         super.onResume();
         //绑定广播接收器
         registerReceiver(mGattUpdateReceiver, makeGattUpdateIntentFilter());
-        if (mBluetoothLeService != null)
-        {
+        if (mBluetoothLeService != null) {
             //根据蓝牙地址，建立连接
             final boolean result = mBluetoothLeService.connect(mDeviceAddress);
             Log.d(TAG, "Connect request result=" + result);
         }
     }
+
     /**
-     * @Title: init
-     * @Description: TODO(初始化UI控件)
      * @param
      * @return void
      * @throws
+     * @Title: init
+     * @Description: TODO(初始化UI控件)
      */
     private void init() {
         back1 = (Button) this.findViewById(R.id.back1);
@@ -256,100 +268,98 @@ public class Blue_maze_Activity extends BasActivity implements View.OnClickListe
         forward_01_btn = (Button) this.findViewById(R.id.top_center);
         forward_02_btn = (Button) this.findViewById(R.id.center_center);
         back_01_btn = (Button) this.findViewById(R.id.bottom_center);
-        right_01_btn= (Button) this.findViewById(R.id.center_right);
+        right_01_btn = (Button) this.findViewById(R.id.center_right);
         left_01_btn = (Button) this.findViewById(R.id.center_left);
         right_forward_01_btn = (Button) this.findViewById(R.id.top_right);
-        left_forward_01_btn  = (Button) this.findViewById(R.id.top_left);
-        left_back_01_btn  = (Button) this.findViewById(R.id.bottom_left);
-        right_back_01_btn  = (Button) this.findViewById(R.id.bottom_right);
+        left_forward_01_btn = (Button) this.findViewById(R.id.top_left);
+        left_back_01_btn = (Button) this.findViewById(R.id.bottom_left);
+        right_back_01_btn = (Button) this.findViewById(R.id.bottom_right);
         //send_et = (EditText) this.findViewById(R.id.send_et);
         //connect_state.setText(status);
         start_maze_btn.setOnClickListener(this);
-        back1.setOnClickListener(new View.OnClickListener(){
+        back1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
                 Log.d("blue-text", "结束Blue_maze_activity");
             }
         });
-        clean_maze_btn.setOnClickListener(new View.OnClickListener(){
+        clean_maze_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                for (int i = 0 ; i < route.length ; i++){
+                for (int i = 0; i < route.length; i++) {
                     route[i] = null;
                 }
                 //---清除路线操作----
                 rev_str = "";
-                runOnUiThread(new Runnable()
-                {
+                runOnUiThread(new Runnable() {
                     @Override
-                    public void run()
-                    {
+                    public void run() {
                         route_tv.setText(rev_str);
                         route_sv.scrollTo(0, route_tv.getMeasuredHeight());
                         System.out.println("rev:" + rev_str);
                     }
                 });
-                Log.d("blue-text", "清除路线执行了"+rev_str);
+                Log.d("blue-text", "清除路线执行了" + rev_str);
             }
         });
-        forward_01_btn.setOnClickListener(new View.OnClickListener(){
+        forward_01_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 view_bth("a");
                 Log.d("blue-text", "前行0.1米");
             }
         });
-        forward_02_btn.setOnClickListener(new View.OnClickListener(){
+        forward_02_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 view_bth("e");
                 Log.d("blue-text", "前行0.2米");
             }
         });
-        back_01_btn.setOnClickListener(new View.OnClickListener(){
+        back_01_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 view_bth("d");
                 Log.d("blue-text", "后退0.1米");
             }
         });
-        left_01_btn.setOnClickListener(new View.OnClickListener(){
+        left_01_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 view_bth("b");
                 Log.d("blue-text", "左0.1米");
             }
         });
-        right_01_btn.setOnClickListener(new View.OnClickListener(){
+        right_01_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 view_bth("c");
                 Log.d("blue-text", "右0.1米");
             }
         });
-        left_forward_01_btn.setOnClickListener(new View.OnClickListener(){
+        left_forward_01_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 view_bth("g");
                 Log.d("blue-text", "左前0.1米");
             }
         });
-        right_forward_01_btn.setOnClickListener(new View.OnClickListener(){
+        right_forward_01_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 view_bth("h");
                 Log.d("blue-text", "右前0.1米");
             }
         });
-        right_back_01_btn.setOnClickListener(new View.OnClickListener(){
+        right_back_01_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 view_bth("m");
                 Log.d("blue-text", "右后0.1米");
             }
         });
-        left_back_01_btn.setOnClickListener(new View.OnClickListener(){
+        left_back_01_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 view_bth("k");
@@ -358,17 +368,15 @@ public class Blue_maze_Activity extends BasActivity implements View.OnClickListe
         });
 
     }
-    private final ServiceConnection mServiceConnection = new ServiceConnection()
-    {
+
+    private final ServiceConnection mServiceConnection = new ServiceConnection() {
 
         @Override
         public void onServiceConnected(ComponentName componentName,
-                                       IBinder service)
-        {
+                                       IBinder service) {
             mBluetoothLeService = ((BluetoothLeService.LocalBinder) service)
                     .getService();
-            if (!mBluetoothLeService.initialize())
-            {
+            if (!mBluetoothLeService.initialize()) {
                 Log.e(TAG, "Unable to initialize Bluetooth");
                 finish();
             }
@@ -378,18 +386,16 @@ public class Blue_maze_Activity extends BasActivity implements View.OnClickListe
             mBluetoothLeService.connect(mDeviceAddress);
 
         }
+
         @Override
-        public void onServiceDisconnected(ComponentName componentName)
-        {
+        public void onServiceDisconnected(ComponentName componentName) {
             mBluetoothLeService = null;
         }
 
     };
-    private final BroadcastReceiver mGattUpdateReceiver = new BroadcastReceiver()
-    {
+    private final BroadcastReceiver mGattUpdateReceiver = new BroadcastReceiver() {
         @Override
-        public void onReceive(Context context, Intent intent)
-        {
+        public void onReceive(Context context, Intent intent) {
             final String action = intent.getAction();
             if (BluetoothLeService.ACTION_GATT_CONNECTED.equals(action))//Gatt连接成功
             {
@@ -400,8 +406,7 @@ public class Blue_maze_Activity extends BasActivity implements View.OnClickListe
                 System.out.println("BroadcastReceiver :" + "device connected");
 
             } else if (BluetoothLeService.ACTION_GATT_DISCONNECTED//Gatt连接失败
-                    .equals(action))
-            {
+                    .equals(action)) {
                 mConnected = false;
                 status = "disconnected";
                 //更新连接状态
@@ -410,8 +415,7 @@ public class Blue_maze_Activity extends BasActivity implements View.OnClickListe
                         + "device disconnected");
 
             } else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED//发现GATT服务器
-                    .equals(action))
-            {
+                    .equals(action)) {
                 // Show all the supported services and characteristics on the
                 // user interface.
                 //获取设备的所有蓝牙服务
@@ -424,20 +428,20 @@ public class Blue_maze_Activity extends BasActivity implements View.OnClickListe
                 //处理发送过来的数据
                 try {
                     if (intent.getExtras().getString(
-                            BluetoothLeService.EXTRA_DATA)!=null) {
+                            BluetoothLeService.EXTRA_DATA) != null) {
                         displayData(intent.getExtras().getString(
                                 BluetoothLeService.EXTRA_DATA), intent);
                         System.out.println("BroadcastReceiver onData:"
                                 + intent.getStringExtra(BluetoothLeService.EXTRA_DATA));
                     }
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         }
     };
-    private void updateConnectionState(String status)
-    {
+
+    private void updateConnectionState(String status) {
         Message msg = new Message();
         msg.what = 1;
         Bundle b = new Bundle();
@@ -448,9 +452,9 @@ public class Blue_maze_Activity extends BasActivity implements View.OnClickListe
         System.out.println("connect_state:" + status);
 
     }
+
     /* 意图过滤器 */
-    private static IntentFilter makeGattUpdateIntentFilter()
-    {
+    private static IntentFilter makeGattUpdateIntentFilter() {
         final IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(BluetoothLeService.ACTION_GATT_CONNECTED);
         intentFilter.addAction(BluetoothLeService.ACTION_GATT_DISCONNECTED);
@@ -459,30 +463,30 @@ public class Blue_maze_Activity extends BasActivity implements View.OnClickListe
         intentFilter.addAction(BluetoothLeService.ACTION_DATA_AVAILABLE);
         return intentFilter;
     }
+
     /**
-     * @Title: displayData
-     * @Description: TODO(接收到的数据在scrollview上显示)
      * @param @param rev_string(接受的数据)
      * @return void
      * @throws
+     * @Title: displayData
+     * @Description: TODO(接收到的数据在scrollview上显示)
      */
-    private void displayData(String rev_string,Intent intent)
-    {
+    private void displayData(String rev_string, Intent intent) {
         try {
             byte[] data = intent.getByteArrayExtra("BLE_BYTE_DATA");
-            if(data==null)
+            if (data == null)
                 System.out.println("data is null!!!!!!");
             //GB2312编码
             rev_string = new String(data, 0, data.length, "GB2312");
-            Log.d("blue-text", "接收到的是"+rev_string);
-            if (rev_string.equals("f") == true){
+            Log.d("blue-text", "接收到的是" + rev_string);
+            if (rev_string.equals("f") == true) {
                 Log.d("blue-text", "判断接收到的是f");
                 come();
                 rev_string = "x";//执行完指令将rev_string值赋值为“x”防止出错
 
-            }else if (rev_string.equals("o") == true){
+            } else if (rev_string.equals("o") == true) {
                 //路线运行结束清除数据
-                for (int i = 0 ; i < route.length ; i++){
+                for (int i = 0; i < route.length; i++) {
                     route[i] = null;
                 }
                 rev_string = "x";
@@ -531,14 +535,13 @@ public class Blue_maze_Activity extends BasActivity implements View.OnClickListe
     //处理蓝牙接受的数据，
 
     /**
-     * @Title: displayGattServices
-     * @Description: TODO(处理蓝牙服务)
      * @param
      * @return void
      * @throws
+     * @Title: displayGattServices
+     * @Description: TODO(处理蓝牙服务)
      */
-    private void displayGattServices(List<BluetoothGattService> gattServices)
-    {
+    private void displayGattServices(List<BluetoothGattService> gattServices) {
 
         if (gattServices == null)
             return;
@@ -556,8 +559,7 @@ public class Blue_maze_Activity extends BasActivity implements View.OnClickListe
         mGattCharacteristics = new ArrayList<ArrayList<BluetoothGattCharacteristic>>();
 
         // Loops through available GATT Services.
-        for (BluetoothGattService gattService : gattServices)
-        {
+        for (BluetoothGattService gattService : gattServices) {
 
             // 获取服务列表
             HashMap<String, String> currentServiceData = new HashMap<String, String>();
@@ -579,22 +581,18 @@ public class Blue_maze_Activity extends BasActivity implements View.OnClickListe
 
             // Loops through available Characteristics.
             // 对于当前循环所指向的服务中的每一个特征值
-            for (final BluetoothGattCharacteristic gattCharacteristic : gattCharacteristics)
-            {
+            for (final BluetoothGattCharacteristic gattCharacteristic : gattCharacteristics) {
                 charas.add(gattCharacteristic);
                 HashMap<String, String> currentCharaData = new HashMap<String, String>();
                 uuid = gattCharacteristic.getUuid().toString();
 
                 if (gattCharacteristic.getUuid().toString()
-                        .equals(HEART_RATE_MEASUREMENT))
-                {
+                        .equals(HEART_RATE_MEASUREMENT)) {
                     // 测试读取当前Characteristic数据，会触发mOnDataAvailable.onCharacteristicRead()
-                    mhandler.postDelayed(new Runnable()
-                    {
+                    mhandler.postDelayed(new Runnable() {
 
                         @Override
-                        public void run()
-                        {
+                        public void run() {
                             // TODO Auto-generated method stub
                             mBluetoothLeService
                                     .readCharacteristic(gattCharacteristic);
@@ -611,8 +609,7 @@ public class Blue_maze_Activity extends BasActivity implements View.OnClickListe
                 }
                 List<BluetoothGattDescriptor> descriptors = gattCharacteristic
                         .getDescriptors();
-                for (BluetoothGattDescriptor descriptor : descriptors)
-                {
+                for (BluetoothGattDescriptor descriptor : descriptors) {
                     System.out.println("---descriptor UUID:"
                             + descriptor.getUuid());
                     // 获取特征值的描述
@@ -631,15 +628,14 @@ public class Blue_maze_Activity extends BasActivity implements View.OnClickListe
         }
 
     }
+
     /**
      * 将数据分包
-     *
-     * **/
-    public int[] dataSeparate(int len)
-    {
+     **/
+    public int[] dataSeparate(int len) {
         int[] lens = new int[2];
-        lens[0]=len/20;
-        lens[1]=len%20;
+        lens[0] = len / 20;
+        lens[1] = len % 20;
         return lens;
     }
 
@@ -647,13 +643,15 @@ public class Blue_maze_Activity extends BasActivity implements View.OnClickListe
      * 数据发送线程
      *
      * */
-    public class sendDataThread implements Runnable{
+    public class sendDataThread implements Runnable {
         public String Data;
+
         //----开启新线程---------
         public sendDataThread() {
             super();
             new Thread(this).start();
         }
+
         //----测试按钮数据发送---------
         public sendDataThread(String data) {
             super();
@@ -664,48 +662,45 @@ public class Blue_maze_Activity extends BasActivity implements View.OnClickListe
         @Override
         public void run() {
             // TODO Auto-generated method stub   ---TODO自动生成的方法存根
-            byte[] buff =null;
+            byte[] buff = null;
             try {
                 //buff =send_et.getText().toString().getBytes("GB2312");
-                buff =Data.getBytes("GB2312");
-                System.out.println("buff len:"+buff.length);
+                buff = Data.getBytes("GB2312");
+                System.out.println("buff len:" + buff.length);
                 Log.d("blue-text", "buff启动了字节转换");
             } catch (UnsupportedEncodingException e) {
                 // TODO Auto-generated catch block  --TODO自动生成的catch块
                 e.printStackTrace();
             }
             int[] sendDatalens = dataSeparate(buff.length);
-            for(int i=0;i<sendDatalens[0];i++)
-            {
+            for (int i = 0; i < sendDatalens[0]; i++) {
                 byte[] dataFor20 = new byte[20];
-                for(int j=0;j<20;j++)
-                {
-                    dataFor20[j]=buff[i*20+j];
+                for (int j = 0; j < 20; j++) {
+                    dataFor20[j] = buff[i * 20 + j];
                 }
                 System.out.println("here1");
-                System.out.println("here1:"+new String(dataFor20));
+                System.out.println("here1:" + new String(dataFor20));
                 target_chara.setValue(dataFor20);
                 mBluetoothLeService.writeCharacteristic(target_chara);
             }
-            if(sendDatalens[1]!=0)
-            {
+            if (sendDatalens[1] != 0) {
                 System.out.println("here2");
                 byte[] lastData = new byte[20];
-                for(int i=0;i<sendDatalens[1];i++)
-                    lastData[i]=buff[sendDatalens[0]*20+i];
-                String str=null;
+                for (int i = 0; i < sendDatalens[1]; i++)
+                    lastData[i] = buff[sendDatalens[0] * 20 + i];
+                String str = null;
                 try {
-                    str = new String(lastData, 0, sendDatalens[1],"GB2312");
+                    str = new String(lastData, 0, sendDatalens[1], "GB2312");
                 } catch (UnsupportedEncodingException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
-                System.out.println("here2:"+str+"-------len:"+str.length());
-                if (target_chara == null){
+                System.out.println("here2:" + str + "-------len:" + str.length());
+                if (target_chara == null) {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(Blue_maze_Activity.this, "没建立连接，请检查设备...", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(BlueMazeActivity.this, "没建立连接，请检查设备...", Toast.LENGTH_SHORT).show();
                         }
                     });
                     return;
@@ -717,6 +712,23 @@ public class Blue_maze_Activity extends BasActivity implements View.OnClickListe
         }
 
 
+    }
+
+    /**
+     * 隐藏虚拟按键
+     */
+    protected void hideBottomUIMenu() {
+        //隐藏虚拟按键，并且全屏
+        if (Build.VERSION.SDK_INT > 11 && Build.VERSION.SDK_INT < 19) { // lower api
+            View v = this.getWindow().getDecorView();
+            v.setSystemUiVisibility(View.GONE);
+        } else if (Build.VERSION.SDK_INT >= 19) {
+            //for new api versions.
+            View decorView = getWindow().getDecorView();
+            int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY ;
+            decorView.setSystemUiVisibility(uiOptions);
+        }
     }
 
 }

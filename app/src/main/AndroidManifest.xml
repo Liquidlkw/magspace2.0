@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <uses-feature
         android:name="android.hardware.bluetooth_le"
@@ -26,10 +27,11 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".model.BluechoiceActivity"></activity>
-        <activity android:name=".ui.Blue_maze_Activity"></activity>
-        <activity android:name=".model.BlueMainActivity"></activity>
-        <activity android:name=".ui.Ble_Activity" />
+        <activity android:name=".PolicyActivity"></activity>
+        <activity android:name=".model.BluechoiceActivity" />
+        <activity android:name=".ui.BlueMazeActivity" />
+        <activity android:name=".model.BlueMainActivity" />
+        <activity android:name=".ui.BleActivity" />
 
         <service
             android:name=".service.BluetoothLeService"
@@ -247,7 +249,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity> <!-- 注册广播 -->
-        <receiver android:name=".Bean.HomeWatcherReceiver"></receiver>
+        <receiver android:name=".Bean.HomeWatcherReceiver" />
     </application>
 
 </manifest>

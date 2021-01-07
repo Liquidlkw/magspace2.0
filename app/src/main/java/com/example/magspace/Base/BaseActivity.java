@@ -28,19 +28,16 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_base);
+        setContentLayout(R.layout.activity_base);
         background = findViewById(R.id.bg);
         content = findViewById(R.id.content);
         title = findViewById(R.id.title);
         reback = findViewById(R.id.imageView13);
-        reback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                reback.setColorFilter(Color.GRAY, PorterDuff.Mode.MULTIPLY);
-                if (DataUtil.isvoiceplay)
-                    DataUtil.soundPool.play(5, 1, 1, 1, 0, 1);
-                finish();
-            }
+        reback.setOnClickListener(v -> {
+            reback.setColorFilter(Color.GRAY, PorterDuff.Mode.MULTIPLY);
+            if (DataUtil.isvoiceplay)
+                DataUtil.soundPool.play(5, 1, 1, 1, 0, 1);
+            finish();
         });
     }
 

@@ -1,10 +1,15 @@
 package com.example.magspace.ui;
 
-import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattDescriptor;
 import android.bluetooth.BluetoothGattService;
-import android.content.*;
+import android.content.BroadcastReceiver;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.ServiceConnection;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
@@ -12,10 +17,15 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.*;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ScrollView;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
+
 import com.example.magspace.R;
-import com.example.magspace.model.BlueMainActivity;
 import com.example.magspace.service.BluetoothLeService;
 
 import java.io.UnsupportedEncodingException;
@@ -23,14 +33,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import static com.example.magspace.model.BlueMainActivity.*;
+public class BleActivity extends BLEBaseActivity implements OnClickListener {
 
-public class Ble_Activity extends BasActivity implements OnClickListener {
-
-    private final static String TAG = Ble_Activity.class.getSimpleName();
+    private final static String TAG = BleActivity.class.getSimpleName();
     //蓝牙4.0的UUID,其中0000ffe1-0000-1000-8000-00805f9b34fb是广州汇承信息科技有限公司08蓝牙模块的UUID
     public static String HEART_RATE_MEASUREMENT = "0000ffe1-0000-1000-8000-00805f9b34fb";
-    public static String EXTRAS_DEVICE_NAME = "DEVICE_NAME";;
+    public static String EXTRAS_DEVICE_NAME = "DEVICE_NAME";
+    ;
     public static String EXTRAS_DEVICE_ADDRESS = "DEVICE_ADDRESS";
     public static String EXTRAS_DEVICE_RSSI = "RSSI";
 
@@ -62,38 +71,37 @@ public class Ble_Activity extends BasActivity implements OnClickListener {
     //文本编辑框
     private EditText send_et;
     private ScrollView rev_sv;
-    private ArrayList<ArrayList<BluetoothGattCharacteristic>> mGattCharacteristics = new ArrayList<ArrayList<BluetoothGattCharacteristic>>();
+    private ArrayList<ArrayList<BluetoothGattCharacteristic>> mGattCharacteristics = new ArrayList<>();
     //蓝牙特征值
     private static BluetoothGattCharacteristic target_chara = null;
-    public static  byte[] revDataForCharacteristic;
+    public static byte[] revDataForCharacteristic;
     private Handler mhandler = new Handler();
-    private Handler myHandler = new Handler(new Handler.Callback() {
+    private final Handler myHandler = new Handler(new Handler.Callback() {
         @Override
         public boolean handleMessage(@NonNull Message msg) {
-            switch (msg.what)
-            {
+            switch (msg.what) {
                 // 判断发送的消息
-                case 1:
-                {
+                case 1: {
                     // 更新View
                     String state = msg.getData().getString("connect_state");
                     connect_state.setText(state);
-
                     break;
                 }
-
             }
-
             return false;
         }
     });
 
 
+
+
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
+        hideBottomUIMenu();
         setContentView(R.layout.ble_activity);
         b = getIntent().getExtras();
         //从意图获取显示的蓝牙信息
@@ -105,27 +113,28 @@ public class Ble_Activity extends BasActivity implements OnClickListener {
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
         init();
-
     }
 
+
     @Override
-    protected void onDestroy()
-    {
+    protected void onDestroy() {
         super.onDestroy();
         //解除广播接收器
         unregisterReceiver(mGattUpdateReceiver);
+        //解绑服务
+        unbindService(mServiceConnection);
         mBluetoothLeService = null;
+        myHandler.removeCallbacksAndMessages(null);
+        mhandler.removeCallbacksAndMessages(null);
     }
 
     // Activity出来时候，绑定广播接收器，监听蓝牙连接服务传过来的事件
     @Override
-    protected void onResume()
-    {
+    protected void onResume() {
         super.onResume();
         //绑定广播接收器
         registerReceiver(mGattUpdateReceiver, makeGattUpdateIntentFilter());
-        if (mBluetoothLeService != null)
-        {
+        if (mBluetoothLeService != null) {
             //根据蓝牙地址，建立连接
             final boolean result = mBluetoothLeService.connect(mDeviceAddress);
             Log.d(TAG, "Connect request result=" + result);
@@ -133,102 +142,80 @@ public class Ble_Activity extends BasActivity implements OnClickListener {
     }
 
     /**
-     * @Title: init
-     * @Description: TODO(初始化UI控件)
      * @param
      * @return void
      * @throws
+     * @Title: init
+     * @Description: TODO(初始化UI控件)
      */
-    private void init()
-    {
+    private void init() {
         rev_sv = (ScrollView) this.findViewById(R.id.rev_sv);
         rev_tv = (TextView) this.findViewById(R.id.rev_tv);
         connect_state = (TextView) this.findViewById(R.id.connect_state);
         tracing_btn = (Button) this.findViewById(R.id.tracing_btn);
         maze_btn = (Button) this.findViewById(R.id.maze_btn);
         xun_btn = (Button) this.findViewById(R.id.xun_btn);
-        come_btn = (Button) this.findViewById(R.id.come_bth);
-        back_btn = (Button) this.findViewById(R.id.back_bth);
-        left_btn = (Button) this.findViewById(R.id.left_bth);
-        right_btn = (Button) this.findViewById(R.id.right_bth);
-        stop_btn  = (Button) this.findViewById(R.id.stop_bth);
-        //send_et = (EditText) this.findViewById(R.id.send_et);
-        connect_state.setText(status);
+        come_btn = (Button) this.findViewById(R.id.come_btn);
+        back_btn = (Button) this.findViewById(R.id.back_btn);
+        left_btn = (Button) this.findViewById(R.id.left_btn);
+        right_btn = (Button) this.findViewById(R.id.right_btn);
+        stop_btn = (Button) this.findViewById(R.id.stop_btn);
+        connect_state.setText("connecting");
         stop_btn.setOnClickListener(this);
         //返回按钮启动
-        tracing_btn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
+        tracing_btn.setOnClickListener(view -> {
 //                String data = "20";
 //                new sendDataThread(data);
-                //---蓝牙测试工具----
-                String data = "0";
-                new sendDataThread(data);
-                finish();
-                Log.d("blue-text", "tracing按钮启动了");
-            }
+            //---蓝牙测试工具----
+            String data = "0";
+            new sendDataThread(data);
+            finish();
+            Log.d("blue-text", "tracing按钮启动了");
         });
-        xun_btn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
+        xun_btn.setOnClickListener(view -> {
 //                String data = "20";
 //                new sendDataThread(data);
-                //---蓝牙测试工具----
-                String data = "6";
-                new sendDataThread(data);
-                Log.d("blue-text", "寻迹xun按钮启动了");
-            }
+            //---蓝牙测试工具----
+            String data = "6";
+            new sendDataThread(data);
+            Log.d("blue-text", "寻迹xun按钮启动了");
         });
         //迷宫
-        maze_btn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
+        maze_btn.setOnClickListener(view -> {
 //                String data = "5";
 //                new sendDataThread(data);
-                Log.d("blue-text", "寻迹功能");
+            Log.d("blue-text", "寻迹功能");
 
-            }
         });
         //前进
-        come_btn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                String data = "1";
-                new sendDataThread(data);
-                //---蓝牙测试工具----
-                Log.d("blue-text", "come按钮启动了--发送一次"+data);
-            }
+        come_btn.setOnClickListener(view -> {
+            String data = "1";
+            new sendDataThread(data);
+            //---蓝牙测试工具----
+            Log.d("blue-text", "come按钮启动了--发送一次" + data);
         });
         //后退
-        back_btn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                String data = "2";
-                new sendDataThread(data);
-                //---蓝牙测试工具----
-                Log.d("blue-text", "back按钮启动了--发送一次"+data);
-            }
+        back_btn.setOnClickListener(view -> {
+            String data = "2";
+            new sendDataThread(data);
+            //---蓝牙测试工具----
+            Log.d("blue-text", "back按钮启动了--发送一次" + data);
         });
         //左转
-        left_btn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                String data = "3";
-                new sendDataThread(data);
-                //---蓝牙测试工具----
-                Log.d("blue-text", "left按钮启动了--发送一次"+data);
-            }
+        left_btn.setOnClickListener(view -> {
+            String data = "3";
+            new sendDataThread(data);
+            //---蓝牙测试工具----
+            Log.d("blue-text", "left按钮启动了--发送一次" + data);
         });
         //右转
-        right_btn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                String data = "4";
-                new sendDataThread(data);
-                //---蓝牙测试工具----
-                Log.d("blue-text", "right按钮启动了--发送一次"+data);
-            }
+        right_btn.setOnClickListener(view -> {
+            String data = "4";
+            new sendDataThread(data);
+            //---蓝牙测试工具----
+            Log.d("blue-text", "right按钮启动了--发送一次" + data);
         });
+
 //        stop_btn.setOnClickListener(new View.OnClickListener(){
 //            @Override
 //            public void onClick(View view) {
@@ -242,17 +229,14 @@ public class Ble_Activity extends BasActivity implements OnClickListener {
     }
 
     /* BluetoothLeService绑定的回调函数 */
-    private final ServiceConnection mServiceConnection = new ServiceConnection()
-    {
+    private final ServiceConnection mServiceConnection = new ServiceConnection() {
 
         @Override
         public void onServiceConnected(ComponentName componentName,
-                                       IBinder service)
-        {
+                                       IBinder service) {
             mBluetoothLeService = ((BluetoothLeService.LocalBinder) service)
                     .getService();
-            if (!mBluetoothLeService.initialize())
-            {
+            if (!mBluetoothLeService.initialize()) {
                 Log.e(TAG, "Unable to initialize Bluetooth");
                 finish();
             }
@@ -260,12 +244,10 @@ public class Ble_Activity extends BasActivity implements OnClickListener {
             // initialization.
             // 根据蓝牙地址，连接设备
             mBluetoothLeService.connect(mDeviceAddress);
-
         }
 
         @Override
-        public void onServiceDisconnected(ComponentName componentName)
-        {
+        public void onServiceDisconnected(ComponentName componentName) {
             mBluetoothLeService = null;
         }
 
@@ -274,23 +256,20 @@ public class Ble_Activity extends BasActivity implements OnClickListener {
     /**
      * 广播接收器，负责接收BluetoothLeService类发送的数据
      */
-    private final BroadcastReceiver mGattUpdateReceiver = new BroadcastReceiver()
-    {
+    private final BroadcastReceiver mGattUpdateReceiver = new BroadcastReceiver() {
         @Override
-        public void onReceive(Context context, Intent intent)
-        {
+        public void onReceive(Context context, Intent intent) {
             final String action = intent.getAction();
-            if (BluetoothLeService.ACTION_GATT_CONNECTED.equals(action))//Gatt连接成功
-            {
+            if (BluetoothLeService.ACTION_GATT_CONNECTED.equals(action)) {
+                //Gatt连接成功
                 mConnected = true;
                 status = "connected";
                 //更新连接状态
                 updateConnectionState(status);
                 System.out.println("BroadcastReceiver :" + "device connected");
 
-            } else if (BluetoothLeService.ACTION_GATT_DISCONNECTED//Gatt连接失败
-                    .equals(action))
-            {
+            } else if (BluetoothLeService.ACTION_GATT_DISCONNECTED.equals(action)) {
+                //Gatt连接失败
                 mConnected = false;
                 status = "disconnected";
                 //更新连接状态
@@ -298,9 +277,8 @@ public class Ble_Activity extends BasActivity implements OnClickListener {
                 System.out.println("BroadcastReceiver :"
                         + "device disconnected");
 
-            } else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED//发现GATT服务器
-                    .equals(action))
-            {
+            } else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED.equals(action)) {
+                //发现GATT服务器
                 // Show all the supported services and characteristics on the
                 // user interface.
                 //获取设备的所有蓝牙服务
@@ -308,18 +286,18 @@ public class Ble_Activity extends BasActivity implements OnClickListener {
                         .getSupportedGattServices());
                 System.out.println("BroadcastReceiver :"
                         + "device SERVICES_DISCOVERED");
-            } else if (BluetoothLeService.ACTION_DATA_AVAILABLE.equals(action))//有效数据
-            {
+            } else if (BluetoothLeService.ACTION_DATA_AVAILABLE.equals(action)) {
+                //有效数据
                 //处理发送过来的数据
                 try {
                     if (intent.getExtras().getString(
-                            BluetoothLeService.EXTRA_DATA)!=null) {
+                            BluetoothLeService.EXTRA_DATA) != null) {
                         displayData(intent.getExtras().getString(
                                 BluetoothLeService.EXTRA_DATA), intent);
                         System.out.println("BroadcastReceiver onData:"
                                 + intent.getStringExtra(BluetoothLeService.EXTRA_DATA));
                     }
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -327,8 +305,7 @@ public class Ble_Activity extends BasActivity implements OnClickListener {
     };
 
     /* 更新连接状态 */
-    private void updateConnectionState(String status)
-    {
+    private void updateConnectionState(String status) {
         Message msg = new Message();
         msg.what = 1;
         Bundle b = new Bundle();
@@ -341,8 +318,7 @@ public class Ble_Activity extends BasActivity implements OnClickListener {
     }
 
     /* 意图过滤器 */
-    private static IntentFilter makeGattUpdateIntentFilter()
-    {
+    private static IntentFilter makeGattUpdateIntentFilter() {
         final IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(BluetoothLeService.ACTION_GATT_CONNECTED);
         intentFilter.addAction(BluetoothLeService.ACTION_GATT_DISCONNECTED);
@@ -353,18 +329,17 @@ public class Ble_Activity extends BasActivity implements OnClickListener {
     }
 
     /**
-     * @Title: displayData
-     * @Description: TODO(接收到的数据在scrollview上显示)
      * @param @param rev_string(接受的数据)
      * @return void
      * @throws
+     * @Title: displayData
+     * @Description: TODO(接收到的数据在scrollview上显示)
      */
-    private void displayData(String rev_string,Intent intent)
-    {
+    private void displayData(String rev_string, Intent intent) {
         try {
             byte[] data = intent.getByteArrayExtra("BLE_BYTE_DATA");
-            if(data==null)
-                System.out.println("data is null!!!!!!");
+            if (data == null)
+                Log.d(TAG, "displayData: " + "data is null!");
             //GB2312编码
             rev_string = new String(data, 0, data.length, "GB2312");
         } catch (UnsupportedEncodingException e) {
@@ -373,11 +348,9 @@ public class Ble_Activity extends BasActivity implements OnClickListener {
         }
         rev_str += rev_string;
         //更新UI
-        runOnUiThread(new Runnable()
-        {
+        runOnUiThread(new Runnable() {
             @Override
-            public void run()
-            {
+            public void run() {
                 rev_tv.setText(rev_str);
                 rev_sv.scrollTo(0, rev_tv.getMeasuredHeight());
                 System.out.println("rev:" + rev_str);
@@ -388,14 +361,13 @@ public class Ble_Activity extends BasActivity implements OnClickListener {
     //处理蓝牙接受的数据，
 
     /**
-     * @Title: displayGattServices
-     * @Description: TODO(处理蓝牙服务)
      * @param
      * @return void
      * @throws
+     * @Title: displayGattServices
+     * @Description: TODO(处理蓝牙服务)
      */
-    private void displayGattServices(List<BluetoothGattService> gattServices)
-    {
+    private void displayGattServices(List<BluetoothGattService> gattServices) {
 
         if (gattServices == null)
             return;
@@ -413,8 +385,7 @@ public class Ble_Activity extends BasActivity implements OnClickListener {
         mGattCharacteristics = new ArrayList<ArrayList<BluetoothGattCharacteristic>>();
 
         // Loops through available GATT Services.
-        for (BluetoothGattService gattService : gattServices)
-        {
+        for (BluetoothGattService gattService : gattServices) {
 
             // 获取服务列表
             HashMap<String, String> currentServiceData = new HashMap<String, String>();
@@ -436,22 +407,18 @@ public class Ble_Activity extends BasActivity implements OnClickListener {
 
             // Loops through available Characteristics.
             // 对于当前循环所指向的服务中的每一个特征值
-            for (final BluetoothGattCharacteristic gattCharacteristic : gattCharacteristics)
-            {
+            for (final BluetoothGattCharacteristic gattCharacteristic : gattCharacteristics) {
                 charas.add(gattCharacteristic);
                 HashMap<String, String> currentCharaData = new HashMap<String, String>();
                 uuid = gattCharacteristic.getUuid().toString();
 
                 if (gattCharacteristic.getUuid().toString()
-                        .equals(HEART_RATE_MEASUREMENT))
-                {
+                        .equals(HEART_RATE_MEASUREMENT)) {
                     // 测试读取当前Characteristic数据，会触发mOnDataAvailable.onCharacteristicRead()
-                    mhandler.postDelayed(new Runnable()
-                    {
+                    mhandler.postDelayed(new Runnable() {
 
                         @Override
-                        public void run()
-                        {
+                        public void run() {
                             // TODO Auto-generated method stub
                             mBluetoothLeService
                                     .readCharacteristic(gattCharacteristic);
@@ -468,8 +435,7 @@ public class Ble_Activity extends BasActivity implements OnClickListener {
                 }
                 List<BluetoothGattDescriptor> descriptors = gattCharacteristic
                         .getDescriptors();
-                for (BluetoothGattDescriptor descriptor : descriptors)
-                {
+                for (BluetoothGattDescriptor descriptor : descriptors) {
                     System.out.println("---descriptor UUID:"
                             + descriptor.getUuid());
                     // 获取特征值的描述
@@ -488,15 +454,14 @@ public class Ble_Activity extends BasActivity implements OnClickListener {
         }
 
     }
+
     /**
      * 将数据分包
-     *
-     * **/
-    public int[] dataSeparate(int len)
-    {
+     **/
+    public int[] dataSeparate(int len) {
         int[] lens = new int[2];
-        lens[0]=len/20;
-        lens[1]=len%20;
+        lens[0] = len / 20;
+        lens[1] = len % 20;
         return lens;
     }
 
@@ -504,14 +469,16 @@ public class Ble_Activity extends BasActivity implements OnClickListener {
      * 数据发送线程
      *
      * */
-    public class sendDataThread implements Runnable{
+    public class sendDataThread implements Runnable {
         public String Data;
-              //----开启新线程---------
+
+        //----开启新线程---------
         public sendDataThread() {
             super();
             new Thread(this).start();
         }
-            //----测试按钮数据发送---------
+
+        //----测试按钮数据发送---------
         public sendDataThread(String data) {
             super();
             this.Data = data;
@@ -521,48 +488,45 @@ public class Ble_Activity extends BasActivity implements OnClickListener {
         @Override
         public void run() {
             // TODO Auto-generated method stub   ---TODO自动生成的方法存根
-            byte[] buff =null;
+            byte[] buff = null;
             try {
                 //buff =send_et.getText().toString().getBytes("GB2312");
-                buff =Data.getBytes("GB2312");
-                System.out.println("buff len:"+buff.length);
+                buff = Data.getBytes("GB2312");
+                System.out.println("buff len:" + buff.length);
                 Log.d("blue-text", "buff启动了字节转换");
             } catch (UnsupportedEncodingException e) {
                 // TODO Auto-generated catch block  --TODO自动生成的catch块
                 e.printStackTrace();
             }
             int[] sendDatalens = dataSeparate(buff.length);
-            for(int i=0;i<sendDatalens[0];i++)
-            {
+            for (int i = 0; i < sendDatalens[0]; i++) {
                 byte[] dataFor20 = new byte[20];
-                for(int j=0;j<20;j++)
-                {
-                    dataFor20[j]=buff[i*20+j];
+                for (int j = 0; j < 20; j++) {
+                    dataFor20[j] = buff[i * 20 + j];
                 }
                 System.out.println("here1");
-                System.out.println("here1:"+new String(dataFor20));
+                System.out.println("here1:" + new String(dataFor20));
                 target_chara.setValue(dataFor20);
                 mBluetoothLeService.writeCharacteristic(target_chara);
             }
-            if(sendDatalens[1]!=0)
-            {
+            if (sendDatalens[1] != 0) {
                 System.out.println("here2");
                 byte[] lastData = new byte[20];
-                for(int i=0;i<sendDatalens[1];i++)
-                    lastData[i]=buff[sendDatalens[0]*20+i];
-                String str=null;
+                for (int i = 0; i < sendDatalens[1]; i++)
+                    lastData[i] = buff[sendDatalens[0] * 20 + i];
+                String str = null;
                 try {
-                    str = new String(lastData, 0, sendDatalens[1],"GB2312");
+                    str = new String(lastData, 0, sendDatalens[1], "GB2312");
                 } catch (UnsupportedEncodingException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
-                System.out.println("here2:"+str+"-------len:"+str.length());
-                if (target_chara == null){
+                System.out.println("here2:" + str + "-------len:" + str.length());
+                if (target_chara == null) {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(Ble_Activity.this, "没建立连接，请检查设备...", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(BleActivity.this, "没建立连接，请检查设备...", Toast.LENGTH_SHORT).show();
                         }
                     });
                     return;
@@ -580,15 +544,32 @@ public class Ble_Activity extends BasActivity implements OnClickListener {
      * 发送按键的响应事件，主要发送文本框的数据
      */
     @Override
-    public void onClick(View v)
-    {
+    public void onClick(View v) {
         //String data = send_et.getText().toString();
         //new sendDataThread(data);
         //Log.d("blue-text", "send按钮启动了");
         String data = "0";
         new sendDataThread(data);
         //---蓝牙测试工具----
-        Log.d("blue-text", "stop按钮启动了--发送一次"+data);
+        Log.d("blue-text", "stop按钮启动了--发送一次" + data);
+    }
+
+
+    /**
+     * 隐藏虚拟按键
+     */
+    protected void hideBottomUIMenu() {
+        //隐藏虚拟按键，并且全屏
+        if (Build.VERSION.SDK_INT > 11 && Build.VERSION.SDK_INT < 19) { // lower api
+            View v = this.getWindow().getDecorView();
+            v.setSystemUiVisibility(View.GONE);
+        } else if (Build.VERSION.SDK_INT >= 19) {
+            //只会进入这里
+            View decorView = getWindow().getDecorView();
+            int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+            decorView.setSystemUiVisibility(uiOptions);
+        }
     }
 
 }

@@ -8,7 +8,7 @@ import android.hardware.Sensor;
 import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
-import com.example.magspace.ui.Ble_Activity;
+import com.example.magspace.ui.BleActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -226,7 +226,7 @@ public class BluetoothLeService extends Service {
         final Intent intent = new Intent(action);
         //从特征值获取数据
         final byte[] data = characteristic.getValue();
-        Ble_Activity.revDataForCharacteristic =data;
+        BleActivity.revDataForCharacteristic =data;
         if (data != null && data.length > 0)
         {
             final StringBuilder stringBuilder = new StringBuilder(data.length);

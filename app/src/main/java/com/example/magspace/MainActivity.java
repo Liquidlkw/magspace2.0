@@ -2,24 +2,30 @@ package com.example.magspace;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import com.example.magspace.Dialog.Option;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.magspace.Dialog.DialogGuideIos;
+import com.example.magspace.Dialog.OptionDialog;
 import com.example.magspace.Utils.DataUtil;
-import com.example.magspace.model.*;
+import com.example.magspace.model.AviActivity;
+import com.example.magspace.model.BluechoiceActivity;
+import com.example.magspace.model.BuildingDemoActivity;
+import com.example.magspace.model.CoursesActivity;
+import com.example.magspace.model.ProductActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private ImageView buid;
+    private ImageView build;
     private ImageView course;
     private ImageView product;
     private ImageView control;
@@ -36,16 +42,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView mImageView2;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        SharedPreferences sp = getSharedPreferences("Magspace_Sp", MODE_PRIVATE);//模式通常为MODE_PRIVATE
+        if (!sp.getBoolean("agree", false)) {
+            DialogGuideIos dialogGuideIos = DialogGuideIos.getInstance();
+            dialogGuideIos.show(getSupportFragmentManager(), "dialogGuideIos");
+        }
         setTheme(R.style.AppTheme);//恢复原有的样式
         //背景音效
-        DataUtil.ismusicplay = true;
-        DataUtil.isvoiceplay = true;
+        DataUtil.ismusicplay = false;
+        DataUtil.isvoiceplay = false;
         DataUtil.initmuscic();
         DataUtil.backmusic.start();
         DataUtil.backmusic.setLooping(true);
@@ -55,47 +63,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @SuppressLint("ClickableViewAccessibility")
     private void initView() {
-        buid = (ImageView) findViewById(R.id.imageView6);
-//        para = buid.getLayoutParams();
-//        para.height = ScreenUtil.getScreenHeight(this) / 7;
-//        para.width = ScreenUtil.getScreenWidth(this) / 7;
-//        buid.setLayoutParams(para);
-        buid.setOnClickListener(this);
+        build = (ImageView) findViewById(R.id.imageView6);
+        build.setOnClickListener(this);
 
-
-//        tranlate = AnimationUtils.loadAnimation(this, R.anim.translate_plane);
-//        plane.startAnimation(tranlate);
-
-
-//        para = car.getLayoutParams();
-//        para.width = ScreenUtil.getScreenWidth(this) / 2;
-//        car.setLayoutParams(para);
-//        tranlate1 = AnimationUtils.loadAnimation(this, R.anim.translate_car);
-//        car.startAnimation(tranlate1);
-
-
-
-//        tranlate2 = AnimationUtils.loadAnimation(this, R.anim.translate_robot);
-//        robot.startAnimation(tranlate2);
         course = (ImageView) findViewById(R.id.imageView7);
-//        para = course.getLayoutParams();
-//        para.height = ScreenUtil.getScreenHeight(this) / 7;
-//        para.width = ScreenUtil.getScreenWidth(this) / 7;
-//        course.setLayoutParams(para);
         course.setOnClickListener(this);
-        product = (ImageView) findViewById(R.id.imageView8);
-//        para = product.getLayoutParams();
-//        para.height = ScreenUtil.getScreenHeight(this) / 7;
-//        para.width = ScreenUtil.getScreenWidth(this) / 7;
-//        product.setLayoutParams(para);
 
+        product = (ImageView) findViewById(R.id.imageView8);
         product.setOnClickListener(this);
+
         control = (ImageView) findViewById(R.id.imageView9);
         product = (ImageView) findViewById(R.id.imageView8);
-//        para = control.getLayoutParams();
-//        para.height = ScreenUtil.getScreenHeight(this) / 7;
-//        para.width = ScreenUtil.getScreenWidth(this) / 7;
-//        control.setLayoutParams(para);
         control.setOnClickListener(this);
         /**
          * 设置
@@ -116,15 +94,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         avi = (ImageView) findViewById(R.id.button3);
-//        para = avi.getLayoutParams();
-//        para.height = ScreenUtil.getScreenHeight(this) / 7;
-//        para.width = ScreenUtil.getScreenWidth(this) / 7;
-//        avi.setLayoutParams(para);
         avi.setOnClickListener(this);
+
         shop = (ImageView) findViewById(R.id.imageView5);
         shop.setOnClickListener(this);
-//        mImageView = (ImageView) findViewById(R.id.imageView);
-//        mImageView.setOnClickListener(this);
+
         mImageView2 = (ImageView) findViewById(R.id.imageView2);
         mImageView2.setOnClickListener(this);
 
@@ -141,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.imageView6:
                 //搭建演示
-                buid.setColorFilter(Color.GRAY, PorterDuff.Mode.MULTIPLY);
+                build.setColorFilter(Color.GRAY, PorterDuff.Mode.MULTIPLY);
                 startActivity(new Intent(MainActivity.this, BuildingDemoActivity.class));
                 break;
             case R.id.imageView7:
@@ -155,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 product.setColorFilter(Color.GRAY, PorterDuff.Mode.MULTIPLY);
                 break;
             case R.id.imageView9:
-                //控制天地...待开发
+                //控制天地
                 control.setColorFilter(Color.GRAY, PorterDuff.Mode.MULTIPLY);
                 startActivity(new Intent(MainActivity.this, BluechoiceActivity.class));
                 //Intent intent = new Intent(MainActivity.this,BlueMainActivity.class);
@@ -164,7 +138,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.imageView4:
                 //设置
-                Option optiondialog = new Option(MainActivity.this, R.style.Dialog);
+                OptionDialog optiondialog = new OptionDialog(MainActivity.this, R.style.Dialog);
                 optiondialog.show();
                 break;
             case R.id.button3:
@@ -180,7 +154,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent1);
                 break;
             case R.id.imageView2:
-                startActivity(new Intent(MainActivity.this,AboutMe.class));
+                startActivity(new Intent(MainActivity.this, AboutMe.class));
                 break;
 
         }
@@ -189,7 +163,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onRestart() {
         super.onRestart();
-        buid.clearColorFilter();
+        build.clearColorFilter();
         course.clearColorFilter();
         product.clearColorFilter();
         avi.clearColorFilter();
@@ -200,7 +174,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onResume() {
         super.onResume();
-        buid.clearColorFilter();
+        build.clearColorFilter();
         course.clearColorFilter();
         product.clearColorFilter();
         avi.clearColorFilter();
@@ -208,11 +182,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (DataUtil.ismusicplay && DataUtil.backmusic != null)
             DataUtil.backmusic.start();
 
-        if(getRequestedOrientation()!= ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE){
+        if (getRequestedOrientation() != ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         }
     }
-
 
 
 }
