@@ -52,8 +52,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         setTheme(R.style.AppTheme);//恢复原有的样式
         //背景音效
-        DataUtil.ismusicplay = false;
-        DataUtil.isvoiceplay = false;
+        DataUtil.ismusicplay = true;
+        DataUtil.isvoiceplay = true;
         DataUtil.initmuscic();
         DataUtil.backmusic.start();
         DataUtil.backmusic.setLooping(true);
