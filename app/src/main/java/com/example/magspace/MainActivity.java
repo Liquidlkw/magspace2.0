@@ -80,16 +80,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
          */
         mImageView4 = (ImageView) findViewById(R.id.imageView4);
         mImageView4.setOnClickListener(this);
-        mImageView4.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    mImageView4.setColorFilter(Color.GRAY, PorterDuff.Mode.MULTIPLY);
-                } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    mImageView4.clearColorFilter();
-                }
-                return false;
+        mImageView4.setOnTouchListener((v, event) -> {
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                mImageView4.setColorFilter(Color.GRAY, PorterDuff.Mode.MULTIPLY);
+            } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                mImageView4.clearColorFilter();
             }
+            return false;
         });
 
 

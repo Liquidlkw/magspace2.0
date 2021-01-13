@@ -27,8 +27,7 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setContentLayout(R.layout.activity_base);
+        setContentView(R.layout.activity_base);
         background = findViewById(R.id.bg);
         content = findViewById(R.id.content);
         title = findViewById(R.id.title);
