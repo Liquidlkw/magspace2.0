@@ -1,6 +1,7 @@
 package com.example.magspace.model;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -44,11 +45,15 @@ public class AviActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         if (DataUtil.ismusicplay) {
             DataUtil.backmusic.pause();
-//            DataUtil.ismusicplay = false;
         }
         setContentLayout(R.layout.activity_avi);
         setTitle("视频展示");
         dialog = ProgressDialog.show(this, "提示", "正在加载中", false);
+        dialog.setCancelable(true);
+        dialog.setOnCancelListener(dialog -> {
+            dialog.dismiss();
+            finish();
+        });
         initdata();
     }
 
@@ -60,9 +65,9 @@ public class AviActivity extends BaseActivity {
 
     private void postDataWithParam() {
 
-        OkHttpClient client = new OkHttpClient();//创建OkHttpClient对象。
-        FormBody.Builder formBody = new FormBody.Builder();//创建表单请求体
-        Request request = new Request.Builder()//创建Request 对象。
+        OkHttpClient client = new OkHttpClient();
+        FormBody.Builder formBody = new FormBody.Builder();
+        Request request = new Request.Builder()
                 .url("http://android.magspace2015.com/magspace/android_avi_list")
                 .post(formBody.build())//传递请求体
                 .build();

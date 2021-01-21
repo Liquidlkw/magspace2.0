@@ -49,6 +49,11 @@ public class ProductActivity extends BaseActivity {
         mBanner = (XBanner) findViewById(R.id.banner2);
         setTitle("产品展示");
         dialog = ProgressDialog.show(this, "提示", "正在加载中", false);
+        dialog.setCancelable(true);
+        dialog.setOnCancelListener(dialog -> {
+            dialog.dismiss();
+            finish();
+        });
         postediton();
 
     }
@@ -142,7 +147,6 @@ public class ProductActivity extends BaseActivity {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 if (response.isSuccessful()) {
-                    ToastUtil.getInstance().showToast("获取数据成功");
                     Log.d("okhttp", "获取数据成功");
                     String string = response.body().string();
                     Log.i("onrespone", "onResponse: " + string);
@@ -155,7 +159,6 @@ public class ProductActivity extends BaseActivity {
                     String jsonstring = null;
                     try {
                         jsonstring = jsonObject.getString("data");
-
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -191,19 +194,17 @@ public class ProductActivity extends BaseActivity {
             mBanner.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
                 @Override
                 public void onPageScrolled(int i, float v, int i1) {
-                    Log.i("lkw", "onPageScrolled: " + i);
+
                 }
 
                 @Override
                 public void onPageSelected(int i) {
-                    Log.i("lkw", "onPageSelected: " + i);
-                    setTitle(titles.get(i));
 
+                    setTitle(titles.get(i));
                 }
 
                 @Override
                 public void onPageScrollStateChanged(int i) {
-                    Log.i("lkw", "onPageScrollStateChanged: " + i);
 
                 }
             });

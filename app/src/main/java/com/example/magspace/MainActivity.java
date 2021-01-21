@@ -130,8 +130,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //控制天地
                 control.setColorFilter(Color.GRAY, PorterDuff.Mode.MULTIPLY);
                 startActivity(new Intent(MainActivity.this, BluechoiceActivity.class));
-                //Intent intent = new Intent(MainActivity.this,BlueMainActivity.class);
-                //startActivity(intent);
                 control.clearColorFilter();
                 break;
             case R.id.imageView4:
@@ -152,6 +150,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent1);
                 break;
             case R.id.imageView2:
+                //关于我们
                 startActivity(new Intent(MainActivity.this, AboutMe.class));
                 break;
 

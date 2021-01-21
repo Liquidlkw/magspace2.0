@@ -1,17 +1,26 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        anzhi {
+            keyAlias 'key0'
+            storeFile file('C:\\Users\\likewei\\Desktop\\key\\key.jks')
+            storePassword 'lkw28850684'
+            keyPassword 'lkw28850684'
+        }
+    }
     compileSdkVersion 30
     defaultConfig {
         applicationId "com.example.magspace"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
-        versionName "1.0"
+        versionName "2.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         renderscriptTargetApi 28
         renderscriptSupportModeEnabled true
         flavorDimensions "release"
+        signingConfig signingConfigs.anzhi
     }
 
     buildTypes {

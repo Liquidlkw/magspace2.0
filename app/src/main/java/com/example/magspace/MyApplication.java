@@ -46,7 +46,6 @@ public class MyApplication extends Application {
         OkHttpUtils.initClient(okHttpClient);
         Fresco.initialize(this);
         myContext = this.getApplicationContext();
-        Toast.makeText(myContext, getChannelName(myContext), Toast.LENGTH_SHORT).show();
     }
 
 
@@ -73,19 +72,6 @@ public class MyApplication extends Application {
         }
     }
 
-    @Override
-    public void onTerminate() {
-        // 程序终止的时候执行
-        Log.d("zh", "onTerminate");
-        super.onTerminate();
-    }
-
-    @Override
-    public void onLowMemory() {
-        // 低内存的时候执行
-        Log.d("zh", "onLowMemory");
-        super.onLowMemory();
-    }
 
     @Override
     public void onTrimMemory(int level) {
@@ -117,16 +103,8 @@ public class MyApplication extends Application {
     }
 
 
-//    @Override
-//    public void onTrimMemory(int level) {
-//        // 程序在内存清理的时候执行
-//        Log.i("zh", "onTrimMemory: ");
-//        super.onTrimMemory(level);
-//        if(DataUtil.ismusicplay)
-//            DataUtil.backmusic.pause();
-//    }
 
-    //key为渠道名的key，对应友盟的 UMENG_CHANNEL_VALUE
+    //key为渠道名的key，对应友盟的 UMENG_CHANNEL
     // 获取渠道工具函数
     public static String getChannelName(Context ctx) {
         if (ctx == null) {
