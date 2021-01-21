@@ -4,6 +4,7 @@ buildscript {
     repositories {
         google()
         jcenter()
+        maven { url 'https://dl.bintray.com/umsdk/release' }
         
     }
     dependencies {
@@ -21,8 +22,8 @@ allprojects {
         maven { url 'https://jitpack.io' }
         maven { url 'https://dl.bintray.com/lingguoding/maven/'}
         maven { url "http://lib.gcssloop.com/repository/gcssloop-central/" }
+        maven { url 'https://dl.bintray.com/umsdk/release' }
 
-        
     }
 }
 
